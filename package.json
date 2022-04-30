@@ -1,5 +1,5 @@
 {
-  "name": "council",
+  "name": "oxcouncil",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,9 +15,7 @@
     "@emotion/styled": "^11.8.1",
     "@fontsource/inter": "^4.5.7",
     "@fontsource/raleway": "^4.5.5",
-    "@fontsource/roboto": "^4.5.5",
     "framer-motion": "^6.3.2",
-    "netlify-cms-app": "^2.15.72",
     "next": "12.1.5",
     "react": "18.1.0",
     "react-dom": "18.1.0",

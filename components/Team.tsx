@@ -11,7 +11,7 @@ import {
   Badge,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { TwitterButton, LinkButton } from '../components/Buttons'
+import { TwitterButton, LinkButton } from '../components/Buttons';
 
 export const Team = () => {
   return (
@@ -27,7 +27,7 @@ export const Team = () => {
         <Avatar
           size={'xl'}
           src={
-            '/team-sample.jpeg'
+            '/assets/team-sample.jpeg'
           }
           mb={4}
           pos={'relative'}

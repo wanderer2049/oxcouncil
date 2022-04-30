@@ -29,8 +29,10 @@ import {
   AddIcon
 } from '@chakra-ui/icons';
 
+import { Logo } from './Logo'
+import { TwitterButton } from './Buttons'
+
 const Links = ['About Us', 'Members'];
-import { TwitterButton } from '../components/Buttons'
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -56,7 +58,7 @@ export const Header = () => {
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
             <Box>
-              <Image boxSize='200px' objectFit='contain' src='/logo-alt.png' alt='OxCouncil' />
+              <Logo boxSize='200px'/>
             </Box>
           </HStack>
           <Flex alignItems={'center'}>

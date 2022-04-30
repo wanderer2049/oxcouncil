@@ -9,16 +9,10 @@ import {
   Tag,
   useColorModeValue,
   Image,
+  useColorMode,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-
-const Logo = (props: any) => {
-  return (
-    <Box>
-      <Image width="250px" height="auto" objectFit='contain' src='/logo-alt.png' alt='OxCouncil' />
-    </Box>
-  );
-};
+import { Logo } from './Logo'
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
@@ -48,7 +42,7 @@ export const Footer = () => {
             flexGrow: 1,
             ml: 8,
           }}>
-          <Logo />
+          <Logo boxSize="250px"/>
         </Flex>
         <Text pt={6} fontSize={'sm'} textAlign={'center'}>
           © 2022 The OxCouncil. All rights reserved.

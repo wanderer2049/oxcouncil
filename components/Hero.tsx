@@ -9,7 +9,7 @@ import {
   IconProps,
   Image,
 } from '@chakra-ui/react';
-import { TwitterButton } from '../components/Buttons'
+import { TwitterButton } from '../components/Buttons';
 
 export const Hero = () => {
   return (

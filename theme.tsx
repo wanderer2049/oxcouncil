@@ -9,6 +9,9 @@ const theme = extendTheme({
     brand: {
       100: "#418AFF",
     },
+    white: {
+      100: "#ffffff",
+    }
   },
   fonts: {
     heading: 'Inter, sans-serif',

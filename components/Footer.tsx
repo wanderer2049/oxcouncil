@@ -1,26 +1,17 @@
 import {
   Box,
-  Container,
   Link,
-  SimpleGrid,
-  Stack,
-  Text,
   Flex,
-  Tag,
+  Text,
   useColorModeValue,
-  Image,
   useColorMode,
+  chakra,
+  VisuallyHidden,
 } from '@chakra-ui/react';
+import { FaTwitter, FaMedium, FaDiscord} from 'react-icons/fa';
 import { ReactNode } from 'react';
 import { Logo } from './Logo'
-
-const ListHeader = ({ children }: { children: ReactNode }) => {
-  return (
-    <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
-      {children}
-    </Text>
-  );
-};
+import { Socials } from './Socials'
 
 export const Footer = () => {
   return (
@@ -44,6 +35,9 @@ export const Footer = () => {
           }}>
           <Logo boxSize="250px"/>
         </Flex>
+        <Box mt="5">
+          <Socials />
+        </Box>
         <Text pt={6} fontSize={'sm'} textAlign={'center'}>
           © 2022 The OxCouncil. All rights reserved.
         </Text>
@@ -51,3 +45,4 @@ export const Footer = () => {
     </Box>
   )
 }
+

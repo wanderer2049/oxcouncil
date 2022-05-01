@@ -3,6 +3,11 @@ import { Link, Button } from '@chakra-ui/react';
 import { FaTwitter } from 'react-icons/fa';
 import { LinkIcon } from '@chakra-ui/icons';
 
+interface Props {
+  text: string,
+  link: string,
+}
+
 export const TwitterButton = () => {
   return (
     <Button
@@ -21,22 +26,23 @@ export const TwitterButton = () => {
       _focus={{
         bg: 'blue.500',
       }} 
-      leftIcon={<FaTwitter />}   
-      href='https://twitter.com/oxcouncil'
+      leftIcon={<FaTwitter />} 
+      href={'https://twitter.com/oxcouncil'}
     >
       Follow Us
     </Button>
   )
 }
 
-export const LinkButton = () => {
+export const LinkButton = (props:Props) => {
   return (
     <Button 
       as={'a'}
       rounded={'full'} 
       px={6} 
-      leftIcon={<LinkIcon />}>
-        Link
+      leftIcon={<LinkIcon />}
+      href='{props.link}'>
+        {props.text}
     </Button>
   )
 }

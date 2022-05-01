@@ -9,6 +9,7 @@ import { Header } from '../components/Header'
 import { Hero } from '../components/Hero'
 import { Team } from '../components/Team'
 import { Footer } from '../components/Footer'
+import { ArticleList } from '../components/Blog'
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
           <Team />
           <Team />
         </SimpleGrid>
+        <ArticleList />
         <Footer />
       </Container>
     </>

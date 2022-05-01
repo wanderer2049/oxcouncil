@@ -9,11 +9,11 @@ import {
   IconProps,
   Image,
 } from '@chakra-ui/react';
-import { TwitterButton } from '../components/Buttons';
+import { LinkButton, TwitterButton } from '../components/Buttons';
 
 export const Hero = () => {
   return (
-    <Container maxW={'5xl'}>
+    <Container maxW={'5xl'} bg="/assets/">
       <Stack
         textAlign={'center'}
         align={'center'}
@@ -34,6 +34,7 @@ export const Hero = () => {
           We are a volunteer-run organization seeing through the future of finance.
         </Text>
         <Stack spacing={6} direction={'row'}>
+          <LinkButton text="What's New" link="/blog" />
           <TwitterButton />
         </Stack>
       </Stack>

@@ -30,9 +30,9 @@ import {
 } from '@chakra-ui/icons';
 
 import { Logo } from './Logo'
-import { TwitterButton } from './Buttons'
+import { Socials } from './Socials'
 
-const Links = ['About Us', 'Members'];
+const Links = ['About Us', 'Blog'];
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -43,7 +43,9 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={'#'}>
+    href={'#'}
+    fontWeight="bold"
+    >
     {children}
   </Link>
 );
@@ -60,12 +62,20 @@ export const Header = () => {
             <Box>
               <Logo boxSize='200px'/>
             </Box>
+            <HStack
+              as={'nav'}
+              spacing={4}
+              display={{ base: 'none', md: 'flex' }}>
+              {Links.map((link) => (
+                <NavLink key={link}>{link}</NavLink>
+              ))}
+            </HStack>
           </HStack>
           <Flex alignItems={'center'}>
-            <Button onClick={toggleColorMode} mr={5} rounded={'full'} width="20px"> 
+            <Socials />
+            <Button onClick={toggleColorMode} ml={7} rounded={'full'} width="20px"> 
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
-            <TwitterButton />
           </Flex>
         </Flex>
       </Box>

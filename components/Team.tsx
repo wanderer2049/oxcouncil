@@ -57,7 +57,7 @@ export const Team = () => {
         </Text>
 
         <Box mt={8} alignItems="center">
-          <LinkButton />
+          <LinkButton text="Link" link="#" />
         </Box>
       </Box>
     </Center>

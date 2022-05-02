@@ -1,7 +1,12 @@
 import { ReactNode } from 'react';
-import { Link, Button } from '@chakra-ui/react';
+import { Link, Button, useColorModeValue } from '@chakra-ui/react';
 import { FaTwitter } from 'react-icons/fa';
 import { LinkIcon } from '@chakra-ui/icons';
+import { BsArrowRightShort } from 'react-icons/bs';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import { HiArrowRight } from 'react-icons/hi';
+import { MdPeopleOutline } from 'react-icons/md';
+import theme from '../theme';
 
 interface Props {
   text: string,
@@ -42,6 +47,43 @@ export const LinkButton = (props:Props) => {
       px={6} 
       leftIcon={<LinkIcon />}
       href='{props.link}'>
+        {props.text}
+    </Button>
+  )
+}
+
+export const BrandButton = (props:Props) => {
+  return (
+    <Button 
+      as={'a'}
+      rounded={'7'} 
+      py={25} 
+      fontWeight={"bold"}
+      width={'200px'}
+      fontFamily={theme.fonts.heading}
+      bg={'brand.100'}
+      _hover={{
+        bg: 'brand.300',
+      }}
+      color={'white'}
+      rightIcon={<HiArrowRight />}
+      href={props.link}>
+        {props.text}
+    </Button>
+  )
+}
+
+export const AltButton = (props:Props) => {
+  return (
+    <Button 
+      as={'a'}
+      rounded={'7'} 
+      py={25} 
+      fontWeight={"bold"}
+      width={'200px'}
+      fontFamily={theme.fonts.heading}
+      leftIcon={<MdPeopleOutline />}
+      href={props.link}>
         {props.text}
     </Button>
   )

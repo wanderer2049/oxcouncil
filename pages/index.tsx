@@ -3,27 +3,39 @@ import {
   Box,
   Flex,
   Container,
-  SimpleGrid
+  SimpleGrid,
+  Heading,
+  Text,
+  useColorModeValue
 } from '@chakra-ui/react';
 import { Header } from '../components/Header'
 import { Hero } from '../components/Hero'
-import { Team } from '../components/Team'
+import { MemberList } from '../components/Member'
 import { Footer } from '../components/Footer'
 import { ArticleList } from '../components/Blog'
+import { Feature } from '../components/Feature'
 
 export default function Home() {
   return (
     <>
       <Container maxW='980px' mt="20px">
         <Header />
-        <Hero />
-        <SimpleGrid columns={{base: 1, sm: 1, md: 3}} spacingX='40px' spacingY='20px'>
-          <Team />
-          <Team />
-          <Team />
-        </SimpleGrid>
-        <ArticleList />
-        <Footer />
+      </Container>
+      <Hero />
+      <Container bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')} width="100%" maxWidth="100%" py={'70'} pt="100">
+        <Container maxW={'980px'}>
+          <ArticleList />
+        </Container>
+      </Container>
+      <Container width="100%" maxWidth="100%" py={'70'}>
+        <Container maxW={'980px'}>
+          <MemberList />
+        </Container>
+      </Container>
+      <Container width="100%" maxWidth="100%" py={'15px'} clipPath={'ellipse(72% 100% at 50% 100%)'} bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}>
+        <Container maxW={'980px'}>
+          <Footer />
+        </Container>
       </Container>
     </>
   );

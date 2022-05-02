@@ -9,16 +9,17 @@ import {
   IconProps,
   Image,
 } from '@chakra-ui/react';
-import { LinkButton, TwitterButton } from '../components/Buttons';
+import { BrandButton, AltButton } from '../components/Buttons';
 
 export const Hero = () => {
   return (
-    <Container maxW={'5xl'} bg="/assets/">
+    <Container maxW={'5xl'}>
       <Stack
         textAlign={'center'}
         align={'center'}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 24 }}>
+        py={{ base: "70px", md: "120px" }}
+        >
         <Heading
           fontWeight={900}
           fontSize={{ base: '4xl', sm: '5xl', md: '8xl' }}
@@ -33,9 +34,9 @@ export const Hero = () => {
         <Text color={'white.500'} fontSize={{ base: '2xl', sm: '2xl', md: '4xl' }} lineHeight={'110%'} maxW={'3xl'} fontWeight={300}>
           We are a volunteer-run organization seeing through the future of finance.
         </Text>
-        <Stack spacing={6} direction={'row'}>
-          <LinkButton text="What's New" link="/blog" />
-          <TwitterButton />
+        <Stack spacing={6} direction={{base:'column', md:"row"}}>
+          <AltButton text="Our Members" link="#" />
+          <BrandButton text="Latest Blog" link="#" />
         </Stack>
       </Stack>
     </Container>

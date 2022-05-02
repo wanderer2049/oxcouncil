@@ -16,7 +16,7 @@ import { Socials } from './Socials'
 export const Footer = () => {
   return (
     <Box>
-      <Box mt={30} py={10}>
+      <Box mt={50} py={10}>
         <Flex
           align={'center'}
           _before={{
@@ -35,11 +35,11 @@ export const Footer = () => {
           }}>
           <Logo boxSize="250px"/>
         </Flex>
-        <Box mt="5">
-          <Socials />
+        <Box mt={2}>
+          <Socials twitter="https://twitter.com/oxcouncil" medium="#" discord="#"/>
         </Box>
         <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-          © 2022 The OxCouncil. All rights reserved.
+          &copy; The OxCouncil. All rights reserved.
         </Text>
       </Box>
     </Box>

@@ -15,9 +15,10 @@ import {
   Flex,
   Spacer,
   IconButton, 
-  useBreakpointValue
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+import { BrandButton } from '../components/Buttons'
 
 interface IBlogTags {
   tags: Array<string>;
@@ -36,12 +37,16 @@ const settings = {
   slidesToScroll: 1,
 };
 
+
 const BlogTags: React.FC<IBlogTags> = (props) => {
+  const bg = useColorModeValue('gray.300', 'gray.700');
+  const color = useColorModeValue('black.100', 'black.100');
+                                   
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map((tag) => {
         return (
-          <Tag size={'md'} key={tag}>
+          <Tag size={'md'} key={tag} bgColor={bg} color={color}>
             {tag}
           </Tag>
         );
@@ -78,7 +83,7 @@ export const ArticleList = () => {
   
   return (
     <>
-    <Flex mt="70">
+    <Flex>
       <Heading as="h1"> 
         <Text as={'span'} color='brand.100' mr="2">
           Latest
@@ -91,24 +96,24 @@ export const ArticleList = () => {
       <Box>
         <IconButton
           aria-label="left-arrow"
-          colorScheme="messenger"
           borderRadius="full"
           mr="5"
           zIndex={2}
+          bg={useColorModeValue('white.100', 'gray.900')}
           onClick={() => slider?.slickPrev()}>
           <BiLeftArrowAlt />
         </IconButton>
         <IconButton
           aria-label="right-arrow"
-          colorScheme="messenger"
           borderRadius="full"
           zIndex={2}
+          bg={useColorModeValue('white.100', 'gray.900')}
           onClick={() => slider?.slickNext()}>
           <BiRightArrowAlt />
         </IconButton>
       </Box>
     </Flex>
-    <Box my="12" bgColor="blackAlpha.500" borderRadius="30px" overflow="hidden">
+    <Box my="12" borderRadius="30px" overflow="hidden" bg={useColorModeValue('white.100', 'gray.900')}>
       <Box
         display="flex"
         flexDirection={{ base: 'column', sm: 'row' }}
@@ -117,7 +122,7 @@ export const ArticleList = () => {
         <Box
           display="flex"
           flex="1"
-          marginRight="3"
+          marginRight={{ base: '0', md: '5' }}
           position="relative"
           alignItems="center">
           <Box
@@ -141,22 +146,21 @@ export const ArticleList = () => {
           flex="1"
           flexDirection="column"
           justifyContent="center"
-          marginTop={{ base: '3', sm: '0' }}
-          pr="10">
+          p={{ base: '30px' }}>
           <BlogTags tags={['News']}/>
           <Heading marginTop="5">
             <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
               Lorem Ipsum
             </Link>
           </Heading>
-          <BlogAuthor name="oxcouncil" date={new Date('2021-05-01T19:01:27Z')} />
           <Text
             as="p"
-            marginTop="5"
+            my="5"
             color={useColorModeValue('gray.700', 'gray.200')}
-            fontSize="lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+            fontSize="md">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
           </Text>
+          <BrandButton text="Read More" link="#" />
         </Box>
       </Box>
     </Box>

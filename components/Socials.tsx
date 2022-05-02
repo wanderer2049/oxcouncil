@@ -10,6 +10,12 @@ import {
 import { FaTwitter, FaMedium, FaDiscord} from 'react-icons/fa';
 import { ReactNode } from 'react';
 
+interface Props {
+  twitter?: string,
+  medium?: string,
+  discord?: string
+}
+
 const SocialButton = ({
   children,
   label,
@@ -41,18 +47,20 @@ const SocialButton = ({
     );
 };
 
-export const Socials = () => {
+export const Socials = (props:Props) => {
   return (
     <Stack direction={'row'} spacing={3} justify="center">
-      <SocialButton label={'Twitter'} href={'https://twitter.com/oxcouncil'}>
-        <FaTwitter />
-      </SocialButton>
-      <SocialButton label={'Discord'} href={'#'}>
-        <FaDiscord />
-      </SocialButton>
-      <SocialButton label={'Medium'} href={'#'}>
-        <FaMedium />
-      </SocialButton>
+      {
+        props.twitter? <SocialButton label={'Twitter'} href={props.twitter}><FaTwitter /></SocialButton> : ""
+      }
+      
+      {
+        props.medium?  <SocialButton label={'Medium'} href={props.medium}><FaMedium /></SocialButton> : ""
+      }
+
+      {
+        props.discord?  <SocialButton label={'Discord'} href={props.discord}><FaDiscord /></SocialButton> : ""
+      }
     </Stack>
   )
 }

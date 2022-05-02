@@ -32,24 +32,25 @@ import {
   SunIcon, 
   AddIcon
 } from '@chakra-ui/icons';
-
 import { Logo } from './Logo'
 import { Socials } from './Socials'
+import theme from '../theme';
 
-const Links = ['About Us', 'Blog'];
+const Links = ['Members', 'Blog'];
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
     px={2}
     py={1}
     rounded={'md'}
-    color="gray.500"
+    color={useColorModeValue("black.900", "white.900")}
     _hover={{
       textDecoration: 'none',
-      color: useColorModeValue("gray.800", "white")
+      color: useColorModeValue("gray.500", "gray.400")
     }}
     href={'#'}
-    fontWeight="bold"
+    fontFamily={theme.fonts.heading}
+    fontWeight={'900'}
     >
     {children}
   </Link>
@@ -61,7 +62,7 @@ export const Header = () => {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} p={{ base: '10px 10px', md: '10px 30px' }} rounded={'lg'}>
+      <Box bg={useColorModeValue('gray.100', 'gray.900')} p={{ base: '15px 15px', md: '15px 30px' }} rounded={'lg'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
             <Box>
@@ -78,7 +79,7 @@ export const Header = () => {
           </HStack>
           <Flex alignItems={'center'}>
             <Box display={{ base: "none", md: "flex" }}>
-              <Socials />
+              <Socials twitter="https://twitter.com/oxcouncil" medium="#" discord="#"/>
             </Box>
             <Button onClick={toggleColorMode} ml={7} rounded={'full'} width="20px"> 
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
@@ -106,7 +107,7 @@ export const Header = () => {
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
               ))}
-              <Socials />
+              <Socials twitter="https://twitter.com/oxcouncil" medium="#" discord="#"/>
             </VStack>
         </Collapse>  
       </Box>

@@ -1,4 +1,5 @@
 import "@fontsource/inter/900.css"
+import "@fontsource/inter/500.css"
 import "@fontsource/raleway/300.css"
 import { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'

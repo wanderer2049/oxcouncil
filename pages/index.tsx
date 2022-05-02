@@ -6,6 +6,7 @@ import {
   SimpleGrid
 } from '@chakra-ui/react';
 import { Header } from '../components/Header'
+import { Header2 } from '../components/Header2'
 import { Hero } from '../components/Hero'
 import { Team } from '../components/Team'
 import { Footer } from '../components/Footer'

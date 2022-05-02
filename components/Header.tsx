@@ -4,6 +4,7 @@ import {
   Flex,
   Avatar,
   HStack,
+  VStack,
   Link,
   IconButton,
   Button,
@@ -18,6 +19,9 @@ import {
   useDisclosure,
   Stack,
   Image,
+  Icon,
+  Text,
+  Collapse
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
@@ -39,9 +43,10 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     px={2}
     py={1}
     rounded={'md'}
+    color="gray.500"
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      color: useColorModeValue("gray.800", "white")
     }}
     href={'#'}
     fontWeight="bold"
@@ -51,12 +56,12 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 );
 
 export const Header = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} p={"10px 30px"} rounded={'lg'}>
+      <Box bg={useColorModeValue('gray.100', 'gray.900')} p={{ base: '10px 10px', md: '10px 30px' }} rounded={'lg'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
             <Box>
@@ -72,12 +77,38 @@ export const Header = () => {
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
-            <Socials />
+            <Box display={{ base: "none", md: "flex" }}>
+              <Socials />
+            </Box>
             <Button onClick={toggleColorMode} ml={7} rounded={'full'} width="20px"> 
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
+            <Flex
+              flex={{ base: 1, md: 'auto' }}
+              ml={{ base: 3 }}
+              display={{ base: 'flex', md: 'none' }}>
+              <IconButton
+                onClick={onToggle}
+                icon={
+                  isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                }
+                aria-label={'Toggle Navigation'}
+              />
+            </Flex>
           </Flex>
         </Flex>
+        <Collapse in={isOpen} animateOpacity>
+          <VStack
+            as={'nav'}
+            spacing={4}
+            display={{ base: 'flex', md: 'none' }}
+            >
+              {Links.map((link) => (
+                <NavLink key={link}>{link}</NavLink>
+              ))}
+              <Socials />
+            </VStack>
+        </Collapse>  
       </Box>
     </>
   );

@@ -87,7 +87,7 @@ export const MemberList = () => {
               Our Growing Community
             </Text>
           </Heading>
-        <Text color={'white.500'} fontSize={{ base: '2xl'}} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} textAlign="center" mt="5">
+        <Text color={'white.500'} fontSize={{ base: '2xl'}} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} textAlign="center" pt="15px">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
         </Text>
       </Stack>

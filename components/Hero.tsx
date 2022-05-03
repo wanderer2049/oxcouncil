@@ -18,7 +18,7 @@ export const Hero = () => {
         textAlign={'center'}
         align={'center'}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: "70px", md: "120px" }}
+        py={{ base: "70px", md: "150px" }}
         >
         <Heading
           fontWeight={900}

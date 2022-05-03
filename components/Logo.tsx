@@ -13,6 +13,6 @@ export const Logo = (props:Props) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Image loading="eager" boxSize={props.boxSize} height={props.height?props.height:"auto"} objectFit='contain' src={colorMode === 'light'? '/assets/logo-light.svg' :'/assets/logo.png'} alt='OxCouncil' />
+    <Image loading="eager" boxSize={props.boxSize} height={props.height?props.height:"auto"} objectFit='contain' src={colorMode === 'light'? '/assets/logo-light.svg' :'/assets/logo.svg'} alt='OxCouncil' />
   )
 }

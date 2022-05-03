@@ -1,4 +1,21 @@
-import Link from 'next/link'
+import {
+  Box,
+  Heading,
+  Link,
+  Image,
+  Text,
+  HStack,
+  Tag,
+  SpaceProps,
+  useColorModeValue,
+  Container,
+  VStack,
+  Flex,
+  Spacer,
+  IconButton, 
+  useBreakpointValue,
+} from '@chakra-ui/react';
+import { BrandButton } from '../components/Buttons'
 import Author from '../types/author'
 
 type Props = {
@@ -17,20 +34,47 @@ const PostPreview = ({
   slug,
 }: Props) => {
   return (
-    <div>
-      <div className="mb-5">
-        {coverImage}
-      </div>
-      <h3 className="text-3xl mb-3 leading-snug">
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a className="hover:underline">{title}</a>
-        </Link>
-      </h3>
-      <div className="text-lg mb-4">
-        {date}
-      </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-    </div>
+    <>
+      <Box
+          display="flex"
+          flexDirection={{ base: 'column', sm: 'row' }}
+          justifyContent="space-between"
+          minHeight={'420px'}
+          >
+        <Box
+          display="flex"
+          flex="1"
+          marginRight={{ base: '0', md: '5' }}
+          position="relative"
+          alignItems="center"
+          backgroundImage={`${coverImage}`}
+          backgroundSize={"cover"}
+          backgroundPosition={"center"}
+          minHeight={'250px'}
+          >
+        </Box>
+        <Box
+          display="flex"
+          flex="1"
+          flexDirection="column"
+          justifyContent="center"
+          p={{ base: '30px' }}>
+          <Heading marginTop="5" fontSize={{'base': '25px', 'md': '25px'}}>
+            <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              {title}
+            </Link>
+          </Heading>
+          <Text
+            as="p"
+            my="5"
+            color={useColorModeValue('gray.700', 'gray.200')}
+            fontSize="md">
+            {excerpt.split(" ").splice(0,15).join(" ")}...
+          </Text>
+          <BrandButton text="Read More" link={`/posts/${slug}`} />
+        </Box>
+      </Box>
+    </>
   )
 }
 

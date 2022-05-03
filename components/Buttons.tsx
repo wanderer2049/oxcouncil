@@ -47,7 +47,7 @@ export const LinkButton = (props:Props) => {
       px={6} 
       leftIcon={<LinkIcon />}
       href='{props.link}'>
-        {props.text}
+        
     </Button>
   )
 }

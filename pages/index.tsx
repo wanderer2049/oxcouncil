@@ -8,13 +8,20 @@ import {
   Text,
   useColorModeValue
 } from '@chakra-ui/react';
-import { Header } from '../components/Header'
-import { Hero } from '../components/Hero'
-import { MemberList } from '../components/Member'
-import { Footer } from '../components/Footer'
-import { ArticleList } from '../components/Blog'
+import { Header } from '../components/Header';
+import { Hero } from '../components/Hero';
+import { MemberList } from '../components/Member';
+import { Footer } from '../components/Footer';
+import { ArticleList } from '../components/Blog';
+import PostList from '../components/PostList';
+import { getAllPosts } from '../lib/posts';
+import Post from '../types/post'
 
-export default function Home() {
+type Props = {
+  allPosts: Post[]
+}
+
+const Home = ({ allPosts }: Props) => {  
   return (
     <>
       <Container maxW='980px' mt="20px">
@@ -24,6 +31,7 @@ export default function Home() {
       <Container bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')} width="100%" maxWidth="100%" py={'70'} pt="100">
         <Container maxW={'980px'}>
           <ArticleList />
+          
         </Container>
       </Container>
       <Container width="100%" maxWidth="100%" py={'70'}>
@@ -38,4 +46,20 @@ export default function Home() {
       </Container>
     </>
   );
+}
+
+export default Home
+
+export const getStaticProps = async () => {
+  const allPosts = getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'coverImage',
+    'excerpt',
+  ])
+
+  return {
+    props: { allPosts },
+  }
 }

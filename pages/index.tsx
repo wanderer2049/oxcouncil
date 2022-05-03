@@ -13,7 +13,6 @@ import { Hero } from '../components/Hero'
 import { MemberList } from '../components/Member'
 import { Footer } from '../components/Footer'
 import { ArticleList } from '../components/Blog'
-import { Feature } from '../components/Feature'
 
 export default function Home() {
   return (

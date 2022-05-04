@@ -2,9 +2,13 @@ import {
   Box,
   Heading,
   Link,
+  Avatar,
   Image,
   Text,
+  Stack,
   HStack,
+  Grid,
+  GridItem,
   Tag,
   SpaceProps,
   useColorModeValue,
@@ -15,8 +19,11 @@ import {
   IconButton, 
   useBreakpointValue,
 } from '@chakra-ui/react';
+import { BsCalendarWeek } from 'react-icons/bs'
+import DateFormatter from '../components/dateFormatter'
 import { BrandButton } from '../components/buttons'
 import Author from '../types/author'
+import theme from '../theme';
 
 type Props = {
   title: string
@@ -24,16 +31,18 @@ type Props = {
   date: string
   excerpt: string
   slug: string
+  author: Author
 }
 
 const PostPreview = ({
   title,
-  coverImage,
   date,
-  excerpt,
   slug,
+  author,
+  coverImage,
+  excerpt,
 }: Props) => {
-  const bgColor = useColorModeValue('gray.700', 'gray.200')
+  const textColor = useColorModeValue('gray.700', 'gray.200')
   return (
     <>
       <Box
@@ -54,17 +63,37 @@ const PostPreview = ({
         flexDirection="column"
         justifyContent="center"
         p={{ base: '30px' }}>
-        <Heading marginTop="5" fontSize={{'base': '25px', 'md': '25px'}}>
+        <Heading marginTop="5" 
+          fontSize={{'base': '2xl', 'md': '3xl'}}
+          fontFamily={theme.fonts.heading}
+          >
           <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
             {title}
           </Link>
         </Heading>
+        <Stack 
+          spacing={3} 
+          direction={{base:'column', md:'row'}} 
+          mt='5' 
+          alignItems={{base:'left', md:'center'}}
+        >
+          <HStack>
+            <Avatar name={ author.name } src={ author.picture } size="xs" />
+            <Text fontFamily={theme.fonts.heading} fontWeight='300'>{ author.name }</Text> 
+          </HStack>
+          <HStack>
+            <Text fontFamily={theme.fonts.heading} fontWeight='300' display={{base:'none', md:'inline-block'}}>&nbsp;-&nbsp;</Text>
+            <BsCalendarWeek />
+            <Text fontFamily={theme.fonts.heading} fontWeight='300'><DateFormatter dateString={date} /></Text>
+          </HStack> 
+        </Stack>
         <Text
           as="p"
           my="5"
-          color={bgColor}
-          fontSize="md">
-          {excerpt.split(" ").splice(0,15).join(" ")}...
+          color={textColor}
+          fontSize="md"
+        >
+          {excerpt.split(" ").splice(0,30).join(" ")}...
         </Text>
         <BrandButton text="Read More" link={`/blog/${slug}`} />
       </Box>

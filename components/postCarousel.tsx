@@ -44,8 +44,8 @@ const PostCarousel = ({ posts }: Props) => {
     <>
       <Flex>
         <Heading as="h1"> 
-          <Text as={'span'} color='brand.100' mr="2">
-            Latest
+          <Text as={'span'} color='brand.100'>
+            Latest&nbsp;
           </Text>
           <Text as={'span'}>
             Blog
@@ -90,6 +90,7 @@ const PostCarousel = ({ posts }: Props) => {
                   date={post.date}
                   slug={post.slug}
                   excerpt={post.excerpt}
+                  author={post.author}
                 />
               </Box>
             </>

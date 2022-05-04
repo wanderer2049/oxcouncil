@@ -11,12 +11,17 @@ import {
   Heading,
   Text,
   Image,
+  HStack,
+  Avatar,
   useColorModeValue
 } from '@chakra-ui/react';
+import { BsCalendarWeek } from 'react-icons/bs'
+import DateFormatter from '../../components/dateFormatter'
 import DefaultLayout from '../../layouts/default'
 import { BrandButton, AltButton } from '../../components/buttons';
 import { getPostBySlug, getAllPosts, markdownToHtml } from '../../lib/blog'
 import PostType from '../../types/post'
+import theme from '../../theme'
 
 type Props = {
   post: PostType
@@ -81,6 +86,23 @@ const Post = ({ post, morePosts, preview }: Props) => {
                   >
                     { post.title }
                 </Heading>
+                <Stack 
+                  spacing={3} 
+                  direction={{base:'column', md:'row'}} 
+                  mt='5' 
+                  alignItems={{base:'left', md:'center'}}
+                  zIndex='12'
+                >
+                  <HStack>
+                    <Avatar name={ post.author.name } src={ post.author.picture } size="xs" />
+                    <Text fontFamily={theme.fonts.heading} fontWeight='300'>{ post.author.name }</Text> 
+                  </HStack>
+                  <HStack>
+                    <Text fontFamily={theme.fonts.heading} fontWeight='300' display={{base:'none', md:'inline-block'}}>&nbsp;-&nbsp;</Text>
+                    <BsCalendarWeek />
+                    <Text fontFamily={theme.fonts.heading} fontWeight='300'><DateFormatter dateString={post.date} /></Text>
+                  </HStack> 
+                </Stack>
               </Stack>
             </Box>
            <Stack
@@ -120,6 +142,7 @@ export async function getStaticProps({ params }: Params) {
     'title',
     'date',
     'slug',
+    'author',
     'content',
     'ogImage',
     'coverImage',

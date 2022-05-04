@@ -29,17 +29,6 @@ const PostList = ({ posts }: Props) => {
   const bgColor = useColorModeValue('white.100', 'gray.900')
   return (
     <>
-      <Flex>
-        <Heading as="h1"> 
-          <Text as={'span'} color='brand.100' mr="2">
-            Latest
-          </Text>
-          <Text as={'span'}>
-            Blog
-          </Text>
-        </Heading>
-        <Spacer />
-      </Flex>
       <Box 
         my={'12'}
         overflow={'hidden'}
@@ -51,7 +40,7 @@ const PostList = ({ posts }: Props) => {
               flexDirection={{ base: 'column', sm: 'row' }}
               justifyContent="space-between"
               minHeight={'420px'}
-              mb='20'
+              mb='50px'
               bg={bgColor}
               borderRadius="15"
               overflow="hidden"
@@ -64,6 +53,7 @@ const PostList = ({ posts }: Props) => {
                 date={post.date}
                 slug={post.slug}
                 excerpt={post.excerpt}
+                author={post.author}
               />
             </Box>
           </>

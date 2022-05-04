@@ -6,6 +6,7 @@ import type { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
 import theme from '../theme'
+import '../styles/globals.scss'
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode

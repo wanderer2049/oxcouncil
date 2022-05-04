@@ -35,8 +35,8 @@ export const Hero = () => {
           We are a volunteer-run organization seeing through the future of finance.
         </Text>
         <Stack spacing={6} direction={{base:'column', md:"row"}}>
-          <AltButton text="Our Members" link="#" />
-          <BrandButton text="Latest Blog" link="#" />
+          <AltButton text="Our Members" link="#members" />
+          <BrandButton text="Latest Blog" link="/blog" />
         </Stack>
       </Stack>
     </Container>

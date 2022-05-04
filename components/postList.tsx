@@ -21,25 +21,12 @@ import { BrandButton } from '../components/buttons'
 import PostPreview from './postPreview'
 import Post from '../types/post'
 
-const settings = {
-  dots: true,
-  arrows: false,
-  fade: true,
-  infinite: true,
-  autoplay: true,
-  speed: 500,
-  autoplaySpeed: 8000,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
-
 type Props = {
   posts: Post[]
 }
 
 const PostList = ({ posts }: Props) => {
-  const [slider, setSlider] = React.useState<Slider | null>(null);
-  
+  const bgColor = useColorModeValue('white.100', 'gray.900')
   return (
     <>
       <Flex>
@@ -52,39 +39,35 @@ const PostList = ({ posts }: Props) => {
           </Text>
         </Heading>
         <Spacer />
-        <Box>
-          <IconButton
-            aria-label="left-arrow"
-            borderRadius="full"
-            mr="3"
-            zIndex={2}
-            bg={useColorModeValue('white.100', 'gray.900')}
-            onClick={() => slider?.slickPrev()}>
-            <BiLeftArrowAlt />
-          </IconButton>
-          <IconButton
-            aria-label="right-arrow"
-            borderRadius="full"
-            zIndex={2}
-            bg={useColorModeValue('white.100', 'gray.900')}
-            onClick={() => slider?.slickNext()}>
-            <BiRightArrowAlt />
-          </IconButton>
-        </Box>
       </Flex>
-      <Box my="12" borderRadius="30px" overflow="hidden" bg={useColorModeValue('white.100', 'gray.900')}>
-        <Slider {...settings} ref={(slider) => setSlider(slider)}>
-          {posts.map((post) => (
-            <PostPreview
-              key={post.slug}
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              slug={post.slug}
-              excerpt={post.excerpt}
-            />
-          ))}
-        </Slider>
+      <Box 
+        my={'12'}
+        overflow={'hidden'}
+      >
+        {posts.map((post, index) => (
+          <>
+            <Box
+              display="flex"
+              flexDirection={{ base: 'column', sm: 'row' }}
+              justifyContent="space-between"
+              minHeight={'420px'}
+              mb='20'
+              bg={bgColor}
+              borderRadius="15"
+              overflow="hidden"
+              key={index}
+            >
+              <PostPreview
+                key={index}
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+                slug={post.slug}
+                excerpt={post.excerpt}
+              />
+            </Box>
+          </>
+        ))}
       </Box>
     </>
   )

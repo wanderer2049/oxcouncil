@@ -33,46 +33,40 @@ const PostPreview = ({
   excerpt,
   slug,
 }: Props) => {
+  const bgColor = useColorModeValue('gray.700', 'gray.200')
   return (
     <>
       <Box
-          display="flex"
-          flexDirection={{ base: 'column', sm: 'row' }}
-          justifyContent="space-between"
-          minHeight={'420px'}
-          >
-        <Box
-          display="flex"
-          flex="1"
-          marginRight={{ base: '0', md: '5' }}
-          position="relative"
-          alignItems="center"
-          backgroundImage={`${coverImage}`}
-          backgroundSize={"cover"}
-          backgroundPosition={"center"}
-          minHeight={'250px'}
-          >
-        </Box>
-        <Box
-          display="flex"
-          flex="1"
-          flexDirection="column"
-          justifyContent="center"
-          p={{ base: '30px' }}>
-          <Heading marginTop="5" fontSize={{'base': '25px', 'md': '25px'}}>
-            <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-              {title}
-            </Link>
-          </Heading>
-          <Text
-            as="p"
-            my="5"
-            color={useColorModeValue('gray.700', 'gray.200')}
-            fontSize="md">
-            {excerpt.split(" ").splice(0,15).join(" ")}...
-          </Text>
-          <BrandButton text="Read More" link={`/blog/${slug}`} />
-        </Box>
+        display="flex"
+        flex="1"
+        marginRight={{ base: '0', md: '5' }}
+        position="relative"
+        alignItems="center"
+        backgroundImage={`${coverImage}`}
+        backgroundSize={"cover"}
+        backgroundPosition={"center"}
+        minHeight={'250px'}
+        >
+      </Box>
+      <Box
+        display="flex"
+        flex="1"
+        flexDirection="column"
+        justifyContent="center"
+        p={{ base: '30px' }}>
+        <Heading marginTop="5" fontSize={{'base': '25px', 'md': '25px'}}>
+          <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+            {title}
+          </Link>
+        </Heading>
+        <Text
+          as="p"
+          my="5"
+          color={bgColor}
+          fontSize="md">
+          {excerpt.split(" ").splice(0,15).join(" ")}...
+        </Text>
+        <BrandButton text="Read More" link={`/blog/${slug}`} />
       </Box>
     </>
   )

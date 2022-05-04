@@ -36,33 +36,32 @@ import { Logo } from './logo'
 import { Socials } from './socials'
 import theme from '../theme';
 
-const Links = ['Members', 'Blog'];
+interface NavItem {
+  label: string;
+  href: string;
+}
 
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    color={useColorModeValue("black.900", "white.900")}
-    _hover={{
-      textDecoration: 'none',
-      color: useColorModeValue("gray.500", "gray.400")
-    }}
-    href={'#'}
-    fontFamily={theme.fonts.heading}
-    fontWeight={'900'}
-    >
-    {children}
-  </Link>
-);
+const Links: Array<NavItem> = [
+  {
+    label: 'Home',
+    href: '/',
+  },
+  {
+    label: 'Blog',
+    href: '/blog',
+  },
+];
 
 export const Header = () => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const bgColor = useColorModeValue('gray.100', 'gray.900')
+  const linkColor = useColorModeValue("black.900", "white.900")
+  const linkHoverColor = useColorModeValue("gray.500", "gray.400")
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} p={{ base: '15px 15px', md: '15px 30px' }} rounded={'lg'}>
+      <Box bg={bgColor} p={{ base: '15px 15px', md: '15px 30px' }} rounded={'lg'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
             <Box>
@@ -72,8 +71,23 @@ export const Header = () => {
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link, index) => (
+                <Link
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  color={linkColor}
+                  _hover={{
+                    textDecoration: 'none',
+                    color: linkHoverColor
+                  }}
+                  href={link.href}
+                  fontFamily={theme.fonts.heading}
+                  fontWeight={'900'}
+                  key={index}
+                  >
+                  {link.label}
+                </Link>
               ))}
             </HStack>
           </HStack>
@@ -104,8 +118,23 @@ export const Header = () => {
             spacing={4}
             display={{ base: 'flex', md: 'none' }}
             >
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link, index) => (
+                <Link
+                  px={2}
+                  py={1}
+                  rounded={'md'}
+                  color={linkColor}
+                  _hover={{
+                    textDecoration: 'none',
+                    color: linkHoverColor
+                  }}
+                  href={link.href}
+                  fontFamily={theme.fonts.heading}
+                  fontWeight={'900'}
+                  key={index}
+                  >
+                  {link.label}
+                </Link>
               ))}
               <Socials twitter="https://twitter.com/oxcouncil" medium="#" discord="#"/>
             </VStack>

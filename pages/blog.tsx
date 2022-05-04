@@ -5,9 +5,7 @@ import {
   useColorModeValue
 } from '@chakra-ui/react';
 import DefaultLayout from '../layouts/default'
-import { Hero } from '../components/hero';
-import { MemberList } from '../components/member';
-import PostCarousel from '../components/postCarousel';
+import PostList from '../components/postList';
 import { getAllPosts } from '../lib/blog';
 import Post from '../types/post'
 
@@ -15,25 +13,23 @@ type Props = {
   allPosts: Post[]
 }
 
-const Home = ({ allPosts }: Props) => {  
+const Blog = ({ allPosts }: Props) => {  
   return (
     <>
-      <Hero />
-      <Container bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')} width="100%" maxWidth="100%" py={'70'} pt="100">
+      <Container 
+        width="100%" 
+        maxWidth="100%" 
+        py={'70'} 
+        pt="100">
         <Container maxW={'980px'}>
-          <PostCarousel posts={allPosts} />
-        </Container>
-      </Container>
-      <Container width="100%" maxWidth="100%" py={'70'} id='members'>
-        <Container maxW={'980px'}>
-          <MemberList />
+          <PostList posts={allPosts} />
         </Container>
       </Container>
     </>
   );
 }
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Blog.getLayout = function getLayout(page: ReactElement) {
   return (
     <DefaultLayout>
       {page}
@@ -41,7 +37,7 @@ Home.getLayout = function getLayout(page: ReactElement) {
   )
 }
 
-export default Home
+export default Blog
 
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([

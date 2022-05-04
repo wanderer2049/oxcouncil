@@ -84,23 +84,16 @@ const Post = ({ post, morePosts, preview }: Props) => {
               </Stack>
             </Box>
            <Stack
-            textAlign={'center'}
+            textAlign={'left'}
             align={'center'}
             spacing={{ base: 8, md: 10 }}
             py={{ base: "50px", md: "50px" }}
+            px={{ base: "30px", md: "50px" }}
+            color={'white.500'} 
           >
-            <Text 
-              color={'white.500'} 
-              fontSize={{ base: '1xl', sm: '1xl', md: '1xl' }} 
-              lineHeight={'110%'} 
-              maxW={'3xl'} 
-              fontWeight={300} 
-              textAlign={'left'} p={'5'}
-            >
-              {post.content}
-          </Text>
-        </Stack>
-          </Box>
+            <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+          </Stack>
+        </Box>
       </Container>
     </>
   )

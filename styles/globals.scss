@@ -1,0 +1,69 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.post-content {
+  width: 100%;
+  max-width: 100%;
+  
+  h1 {
+    font-size: var(--chakra-fontSizes-6xl);
+  }
+
+  h2 {
+    font-size: var(--chakra-fontSizes-5xl);
+  }
+
+  h3 {
+    font-size: var(--chakra-fontSizes-4xl);
+  }
+
+  h4 {
+    font-size: var(--chakra-fontSizes-3xl);
+  }
+
+  h5 {
+    font-size: var(--chakra-fontSizes-2xl);
+  }
+
+  h6 {
+    font-size: var(--chakra-fontSizes-lg);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 900; 
+    font-family: var(--chakra-fonts-heading);
+    line-height: 120%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: var(--chakra-fontSizes-lg);
+    line-height: 130%;
+    font-family: var(--chakra-fonts-body);
+    margin-bottom: 30px;
+  }
+
+  ul, ol {
+    margin: 15px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}

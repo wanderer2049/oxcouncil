@@ -75,6 +75,7 @@ const PostCarousel = ({ posts }: Props) => {
       <Box my="12" borderRadius="30px" overflow="hidden" bg={useColorModeValue('white.100', 'gray.900')}>
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
           {posts.map((post, index) => (
+            <>
               <Box
                 display="flex"
                 flexDirection={{ base: 'column', sm: 'row' }}
@@ -91,6 +92,7 @@ const PostCarousel = ({ posts }: Props) => {
                   excerpt={post.excerpt}
                 />
               </Box>
+            </>
           ))}
         </Slider>
       </Box>

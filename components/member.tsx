@@ -12,8 +12,8 @@ import {
   useColorModeValue,
   SimpleGrid,
 } from '@chakra-ui/react';
-import { TwitterButton, LinkButton } from '../components/Buttons';
-import { Socials } from '../components/Socials'
+import { TwitterButton, LinkButton } from '../components/buttons';
+import { Socials } from '../components/socials'
 
 interface Props {
   name: string,

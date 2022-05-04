@@ -32,8 +32,8 @@ import {
   SunIcon, 
   AddIcon
 } from '@chakra-ui/icons';
-import { Logo } from './Logo'
-import { Socials } from './Socials'
+import { Logo } from './logo'
+import { Socials } from './socials'
 import theme from '../theme';
 
 const Links = ['Members', 'Blog'];

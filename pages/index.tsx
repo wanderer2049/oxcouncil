@@ -1,19 +1,14 @@
 import type { ReactElement } from 'react';
 import { ReactNode } from 'react';
 import {
-  Box,
-  Flex,
   Container,
-  SimpleGrid,
-  Heading,
-  Text,
   useColorModeValue
 } from '@chakra-ui/react';
-import Layout from '../components/Layout'
-import { Hero } from '../components/Hero';
-import { MemberList } from '../components/Member';
-import PostList from '../components/PostList';
-import { getAllPosts } from '../lib/posts';
+import DefaultLayout from '../layouts/default'
+import { Hero } from '../components/hero';
+import { MemberList } from '../components/member';
+import PostList from '../components/postList';
+import { getAllPosts } from '../lib/blog';
 import Post from '../types/post'
 
 type Props = {
@@ -40,9 +35,9 @@ const Home = ({ allPosts }: Props) => {
 
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
-    <Layout>
+    <DefaultLayout>
       {page}
-    </Layout>
+    </DefaultLayout>
   )
 }
 

@@ -5,14 +5,14 @@ import {
   Container,
   useColorModeValue
 } from '@chakra-ui/react';
-import { Header } from './Header';
-import { Footer } from './Footer';
+import { Header } from '../components/header';
+import { Footer } from '../components/footer';
 
 type Props = {
   children: ReactNode;
 };
 
-export default function Layout({ children }: Props) {
+export default function DefaultLayout({ children }: Props) {
   return (
     <>    
       <Container maxW='980px' mt="20px" px="5">

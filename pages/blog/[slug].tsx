@@ -13,9 +13,9 @@ import {
   Image,
   useColorModeValue
 } from '@chakra-ui/react';
-import Layout from '../../components/Layout'
-import { BrandButton, AltButton } from '../../components/Buttons';
-import { getPostBySlug, getAllPosts, markdownToHtml } from '../../lib/posts'
+import DefaultLayout from '../../layouts/default'
+import { BrandButton, AltButton } from '../../components/buttons';
+import { getPostBySlug, getAllPosts, markdownToHtml } from '../../lib/blog'
 import PostType from '../../types/post'
 
 type Props = {
@@ -108,9 +108,9 @@ const Post = ({ post, morePosts, preview }: Props) => {
 
 Post.getLayout = function getLayout(page: ReactElement) {
   return (
-    <Layout>
+    <DefaultLayout>
       {page}
-    </Layout>
+    </DefaultLayout>
   )
 }
 

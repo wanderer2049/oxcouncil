@@ -9,7 +9,7 @@ import {
   IconProps,
   Image,
 } from '@chakra-ui/react';
-import { BrandButton, AltButton } from '../components/Buttons';
+import { BrandButton, AltButton } from '../components/buttons';
 
 export const Hero = () => {
   return (

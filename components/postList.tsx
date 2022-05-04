@@ -17,8 +17,8 @@ import {
   IconButton, 
 } from '@chakra-ui/react';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
-import { BrandButton } from '../components/Buttons'
-import PostPreview from './PostPreview'
+import { BrandButton } from '../components/buttons'
+import PostPreview from './postPreview'
 import Post from '../types/post'
 
 const settings = {

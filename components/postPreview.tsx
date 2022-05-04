@@ -15,7 +15,7 @@ import {
   IconButton, 
   useBreakpointValue,
 } from '@chakra-ui/react';
-import { BrandButton } from '../components/Buttons'
+import { BrandButton } from '../components/buttons'
 import Author from '../types/author'
 
 type Props = {
@@ -71,7 +71,7 @@ const PostPreview = ({
             fontSize="md">
             {excerpt.split(" ").splice(0,15).join(" ")}...
           </Text>
-          <BrandButton text="Read More" link={`/posts/${slug}`} />
+          <BrandButton text="Read More" link={`/blog/${slug}`} />
         </Box>
       </Box>
     </>

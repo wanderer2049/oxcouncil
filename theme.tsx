@@ -18,6 +18,7 @@ const theme = extendTheme({
     heading: 'Inter, sans-serif',
     body: 'Raleway, sans-serif',
   },
+  shadows: { outline: 'none' },
 })
 
 export default theme

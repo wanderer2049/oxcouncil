@@ -35,7 +35,7 @@ export const Footer = () => {
           }}>
           <Logo boxSize="250px"/>
         </Flex>
-        <Box mt={2}>
+        <Box mt={4}>
           <Socials twitter="https://twitter.com/oxcouncil" medium="#" discord="#"/>
         </Box>
         <Text pt={6} fontSize={'sm'} textAlign={'center'}>

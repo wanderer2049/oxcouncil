@@ -40,7 +40,6 @@ type Props = {
 const PostList = ({ posts }: Props) => {
   const [slider, setSlider] = React.useState<Slider | null>(null);
   
-  
   return (
     <>
       <Flex>
@@ -57,7 +56,7 @@ const PostList = ({ posts }: Props) => {
           <IconButton
             aria-label="left-arrow"
             borderRadius="full"
-            mr="5"
+            mr="3"
             zIndex={2}
             bg={useColorModeValue('white.100', 'gray.900')}
             onClick={() => slider?.slickPrev()}>

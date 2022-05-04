@@ -92,6 +92,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
                   mt='5' 
                   alignItems={{base:'left', md:'center'}}
                   zIndex='12'
+                  color={headingColor}
                 >
                   <HStack>
                     <Avatar name={ post.author.name } src={ post.author.picture } size="xs" />

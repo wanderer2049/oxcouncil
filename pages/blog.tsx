@@ -45,7 +45,7 @@ const Blog = ({ allPosts }: Props) => {
         pt={10}
         borderRadius={30}
         >
-        <Container maxW={'980px'}>
+        <Container maxW={'980px'} px={{base:'3', md:'5'}}>
           <PostList posts={allPosts} />
         </Container>
       </Container>

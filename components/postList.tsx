@@ -2,7 +2,6 @@ import React from 'react';
 import Slider from 'react-slick';
 import {
   Box,
-  Image,
   Text,
   useColorModeValue,
   Container

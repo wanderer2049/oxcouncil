@@ -3,7 +3,6 @@ import {
   Heading,
   Link,
   Avatar,
-  Image,
   Text,
   Stack,
   HStack,
@@ -33,6 +32,7 @@ const PostPreview = ({
   excerpt,
 }: Props) => {
   const textColor = useColorModeValue('gray.600', 'gray.200');
+  const bgColor = useColorModeValue('blackAlpha.100', 'whiteAlpha.100');
   return (
     <>
       <Box
@@ -69,11 +69,11 @@ const PostPreview = ({
           ml={{base:'-8px', md:'0px'}}
           mt={5}
         >
-          <HStack ml={{base:'8px', md:'0px'}}>
+          <HStack ml={{base:'8px', md:'0px'}} textColor={ textColor } fontSize={'sm'} fontWeight={600} >
             <Avatar name={ author.name } src={ author.picture } size={'2xs'} />
             <Text fontFamily={'heading'} fontWeight={300}>{ author.name }</Text> 
           </HStack>
-          <HStack >
+          <HStack textColor={ textColor } fontSize={'sm'} fontWeight={600}>
             <Text fontFamily={'heading'} fontWeight={300} display={{base:'none', md:'inline-block'}}>&nbsp;-&nbsp;</Text>
             <BsCalendarWeek />
             <Text fontFamily={'heading'} fontWeight={300}><DateFormatter dateString={date} /></Text>

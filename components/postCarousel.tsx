@@ -14,7 +14,7 @@ import PostPreview from './postPreview';
 import Post from '../lib/types/post';
 
 const settings = {
-  dots: true,
+  dots: false,
   arrows: false,
   fade: true,
   infinite: true,
@@ -31,7 +31,7 @@ type Props = {
 
 const PostCarousel = ({ posts }: Props) => {
   const [slider, setSlider] = React.useState<Slider | null>(null);
-  
+  const bgColor = useColorModeValue('white.100', 'gray.900');
   return (
     <>
       <Flex>
@@ -64,24 +64,24 @@ const PostCarousel = ({ posts }: Props) => {
           </IconButton>
         </Box>
       </Flex>
-      <Box my={12} borderRadius={'30px'} overflow={'hidden'} bg={useColorModeValue('white.100', 'gray.900')}>
+      <Box my={12}>
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
           {posts.map((post, index) => (
-            <Box key={index}>
+            <Box key={index} borderRadius={'30px'}  overflow={'hidden'} bg={bgColor}>
               <Box
-                display={'flex'}
-                flexDirection={{ base: 'column', sm: 'row' }}
-                justifyContent={'space-between'}
-                minHeight={'420px'}
+              display={'flex'}
+              flexDirection={{ base: 'column', sm: 'row' }}
+              justifyContent={'space-between'}
+              minHeight={'420px'}
               >
-                <PostPreview
-                  title={post.title}
-                  coverImage={post.coverImage}
-                  date={post.date}
-                  slug={post.slug}
-                  excerpt={post.excerpt}
-                  author={post.author}
-                />
+              <PostPreview
+              title={post.title}
+              coverImage={post.coverImage}
+              date={post.date}
+              slug={post.slug}
+              excerpt={post.excerpt}
+              author={post.author}
+              />
               </Box>
             </Box>
           ))}

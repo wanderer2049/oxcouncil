@@ -35,6 +35,7 @@ const PostList = ({ posts }: Props) => {
               bg={bgColor}
               borderRadius={15}
               overflow={'hidden'}
+              key={index}
             >
               <PostPreview
                 title={post.title}

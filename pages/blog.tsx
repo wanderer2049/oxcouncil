@@ -7,10 +7,10 @@ import {
   Text,
   useColorModeValue
 } from '@chakra-ui/react';
-import DefaultLayout from '../layouts/default'
+import DefaultLayout from '../components/layout'
 import PostList from '../components/postList';
 import { getAllPosts } from '../lib/blog';
-import Post from '../types/post'
+import Post from '../lib/types/post'
 
 type Props = {
   allPosts: Post[]
@@ -24,7 +24,7 @@ const Blog = ({ allPosts }: Props) => {
         textAlign={'center'}
         align={'center'}
         spacing={{ base: 8, md: 10 }}
-        pt={{ base: "50px", md: "90px" }}
+        pt={{ base: '50px', md: '90px' }}
         >
         <Heading
           fontWeight={900}
@@ -40,10 +40,10 @@ const Blog = ({ allPosts }: Props) => {
       </Stack>
     </Container>
       <Container 
-        width="100%" 
-        maxWidth="100%" 
-        pt="10"
-        borderRadius="30"
+        width={'100%'}
+        maxWidth={'100%'}
+        pt={10}
+        borderRadius={30}
         >
         <Container maxW={'980px'}>
           <PostList posts={allPosts} />
@@ -58,10 +58,10 @@ Blog.getLayout = function getLayout(page: ReactElement) {
     <DefaultLayout>
       {page}
     </DefaultLayout>
-  )
+  );
 }
 
-export default Blog
+export default Blog;
 
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([
@@ -71,9 +71,9 @@ export const getStaticProps = async () => {
     'author',
     'coverImage',
     'excerpt',
-  ])
+  ]);
 
   return {
     props: { allPosts },
-  }
+  };
 }

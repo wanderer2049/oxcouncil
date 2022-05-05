@@ -15,13 +15,13 @@ type Props = {
 export default function DefaultLayout({ children }: Props) {
   return (
     <>    
-      <Container maxW='980px' mt="20px" px="5">
+      <Container maxW={'980px'} mt={'20px'} px={5}>
         <Header />
       </Container>
       <main>{ children }</main>
       <Container 
-        width="100%" 
-        maxWidth="100%" 
+        width={'100%'} 
+        maxWidth={'100%'}
         p={'15px'} 
         clipPath={'ellipse(72% 100% at 50% 100%)'} 
         bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
@@ -31,5 +31,5 @@ export default function DefaultLayout({ children }: Props) {
         </Container>
       </Container>
     </>
-  )
+  );
 }

@@ -1,17 +1,13 @@
 import {
   Box,
-  Link,
   Flex,
   Text,
-  useColorModeValue,
-  useColorMode,
-  chakra,
-  VisuallyHidden,
+  useColorModeValue
 } from '@chakra-ui/react';
 import { FaTwitter, FaMedium, FaDiscord} from 'react-icons/fa';
 import { ReactNode } from 'react';
-import { Logo } from './logo'
-import { Socials } from './socials'
+import { Logo } from './logo';
+import { Socials } from './socials';
 
 export const Footer = () => {
   return (
@@ -33,16 +29,16 @@ export const Footer = () => {
             flexGrow: 1,
             ml: 8,
           }}>
-          <Logo boxSize="250px"/>
+          <Logo boxSize={'250px'} />
         </Flex>
         <Box mt={4}>
-          <Socials twitter="https://twitter.com/oxcouncil" medium="#" discord="#"/>
+          <Socials twitter='https://twitter.com/oxcouncil' medium='#' discord='#'/>
         </Box>
         <Text pt={6} fontSize={'sm'} textAlign={'center'}>
           &copy; The OxCouncil. All rights reserved.
         </Text>
       </Box>
     </Box>
-  )
+  );
 }
 

@@ -3,23 +3,15 @@ import Slider from 'react-slick';
 import {
   Box,
   Heading,
-  Link,
-  Image,
   Text,
-  HStack,
-  Tag,
-  SpaceProps,
   useColorModeValue,
-  Container,
-  VStack,
   Flex,
   Spacer,
-  IconButton, 
+  IconButton
 } from '@chakra-ui/react';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
-import { BrandButton } from '../components/buttons'
-import PostPreview from './postPreview'
-import Post from '../types/post'
+import PostPreview from './postPreview';
+import Post from '../lib/types/post';
 
 const settings = {
   dots: true,
@@ -43,8 +35,8 @@ const PostCarousel = ({ posts }: Props) => {
   return (
     <>
       <Flex>
-        <Heading as="h1"> 
-          <Text as={'span'} color='brand.100'>
+        <Heading as={'h1'}> 
+          <Text as={'span'} color={'brand.100'}>
             Latest&nbsp;
           </Text>
           <Text as={'span'}>
@@ -54,17 +46,17 @@ const PostCarousel = ({ posts }: Props) => {
         <Spacer />
         <Box>
           <IconButton
-            aria-label="left-arrow"
-            borderRadius="full"
-            mr="3"
+            aria-label={'left-arrow'}
+            borderRadius={'full'}
+            mr={3}
             zIndex={2}
             bg={useColorModeValue('white.100', 'gray.900')}
             onClick={() => slider?.slickPrev()}>
             <BiLeftArrowAlt />
           </IconButton>
           <IconButton
-            aria-label="right-arrow"
-            borderRadius="full"
+            aria-label={'right-arrow'}
+            borderRadius={'full'}
             zIndex={2}
             bg={useColorModeValue('white.100', 'gray.900')}
             onClick={() => slider?.slickNext()}>
@@ -72,19 +64,17 @@ const PostCarousel = ({ posts }: Props) => {
           </IconButton>
         </Box>
       </Flex>
-      <Box my="12" borderRadius="30px" overflow="hidden" bg={useColorModeValue('white.100', 'gray.900')}>
+      <Box my={12} borderRadius={'30px'} overflow={'hidden'} bg={useColorModeValue('white.100', 'gray.900')}>
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
           {posts.map((post, index) => (
-            <>
+            <Box key={index}>
               <Box
-                display="flex"
+                display={'flex'}
                 flexDirection={{ base: 'column', sm: 'row' }}
-                justifyContent="space-between"
+                justifyContent={'space-between'}
                 minHeight={'420px'}
-                key={index}
               >
                 <PostPreview
-                  key={index}
                   title={post.title}
                   coverImage={post.coverImage}
                   date={post.date}
@@ -93,12 +83,12 @@ const PostCarousel = ({ posts }: Props) => {
                   author={post.author}
                 />
               </Box>
-            </>
+            </Box>
           ))}
         </Slider>
       </Box>
     </>
-  )
+  );
 }
 
-export default PostCarousel
+export default PostCarousel;

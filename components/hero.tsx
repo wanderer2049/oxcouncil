@@ -3,11 +3,7 @@ import {
   Container,
   Heading,
   Stack,
-  Text,
-  Button,
-  Icon,
-  IconProps,
-  Image,
+  Text
 } from '@chakra-ui/react';
 import { BrandButton, AltButton } from '../components/buttons';
 
@@ -18,7 +14,7 @@ export const Hero = () => {
         textAlign={'center'}
         align={'center'}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: "70px", md: "150px" }}
+        py={{ base: '70px', md: '150px' }}
         >
         <Heading
           fontWeight={900}
@@ -34,9 +30,9 @@ export const Hero = () => {
         <Text color={'white.500'} fontSize={{ base: '2xl', sm: '2xl', md: '4xl' }} lineHeight={'110%'} maxW={'3xl'} fontWeight={300}>
           We are a volunteer-run organization seeing through the future of finance.
         </Text>
-        <Stack spacing={6} direction={{base:'column', md:"row"}}>
-          <AltButton text="Our Members" link="#members" />
-          <BrandButton text="Latest Blog" link="/blog" />
+        <Stack spacing={6} direction={{base:'column', md:'row'}}>
+          <AltButton text='Our Members' link='#members' />
+          <BrandButton text='Latest Blog' link='/blog' />
         </Stack>
       </Stack>
     </Container>

@@ -7,22 +7,13 @@ import {
   Text,
   Stack,
   HStack,
-  Grid,
-  GridItem,
-  Tag,
-  SpaceProps,
   useColorModeValue,
-  Container,
-  VStack,
-  Flex,
-  Spacer,
-  IconButton, 
-  useBreakpointValue,
+  Flex
 } from '@chakra-ui/react';
-import { BsCalendarWeek } from 'react-icons/bs'
-import DateFormatter from '../components/dateFormatter'
-import { BrandButton } from '../components/buttons'
-import Author from '../types/author'
+import { BsCalendarWeek } from 'react-icons/bs';
+import DateFormatter from '../components/dateFormatter';
+import { BrandButton } from '../components/buttons';
+import Author from '../lib/types/author';
 import theme from '../theme';
 
 type Props = {
@@ -42,63 +33,65 @@ const PostPreview = ({
   coverImage,
   excerpt,
 }: Props) => {
-  const textColor = useColorModeValue('gray.700', 'gray.200')
+  const textColor = useColorModeValue('gray.600', 'gray.200');
   return (
     <>
       <Box
-        display="flex"
-        flex="1"
+        display={'flex'}
+        flex={1}
         marginRight={{ base: '0', md: '5' }}
-        position="relative"
-        alignItems="center"
+        position={'relative'}
+        alignItems={'center'}
         backgroundImage={`${coverImage}`}
-        backgroundSize={"cover"}
-        backgroundPosition={"center"}
+        backgroundSize={'cover'}
+        backgroundPosition={'center'}
         minHeight={'250px'}
         >
       </Box>
       <Box
-        display="flex"
-        flex="1"
-        flexDirection="column"
-        justifyContent="center"
-        p={{ base: '30px' }}>
-        <Heading marginTop="5" 
+        display={'flex'}
+        flex={1}
+        flexDirection={'column'}
+        justifyContent={'center'}
+        p={{ base: '30px' }}
+        >
+        <Heading marginTop={5}
           fontSize={{'base': '2xl', 'md': '3xl'}}
           fontFamily={theme.fonts.heading}
           >
-          <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }}>
             {title}
           </Link>
         </Heading>
         <Stack 
           spacing={3} 
           direction={{base:'column', md:'row'}} 
-          mt='5' 
+          mt={'5'}
           alignItems={{base:'left', md:'center'}}
+          color={textColor}
         >
           <HStack>
-            <Avatar name={ author.name } src={ author.picture } size="xs" />
-            <Text fontFamily={theme.fonts.heading} fontWeight='300'>{ author.name }</Text> 
+            <Avatar name={ author.name } src={ author.picture } size={'2xs'} />
+            <Text fontFamily={theme.fonts.heading} fontWeight={300}>{ author.name }</Text> 
           </HStack>
           <HStack>
-            <Text fontFamily={theme.fonts.heading} fontWeight='300' display={{base:'none', md:'inline-block'}}>&nbsp;-&nbsp;</Text>
+            <Text fontFamily={theme.fonts.heading} fontWeight={300} display={{base:'none', md:'inline-block'}}>&nbsp;-&nbsp;</Text>
             <BsCalendarWeek />
-            <Text fontFamily={theme.fonts.heading} fontWeight='300'><DateFormatter dateString={date} /></Text>
+            <Text fontFamily={theme.fonts.heading} fontWeight={300}><DateFormatter dateString={date} /></Text>
           </HStack> 
         </Stack>
         <Text
-          as="p"
-          my="5"
+          as={'p'}
+          my={5}
           color={textColor}
-          fontSize="md"
+          fontSize={'md'}
         >
           {excerpt.split(" ").splice(0,30).join(" ")}...
-        </Text>
-        <BrandButton text="Read More" link={`/blog/${slug}`} />
+        </Text>        
+        <BrandButton text='Read More' link={`/blog/${slug}`} />
       </Box>
     </>
-  )
+  );
 }
 
-export default PostPreview
+export default PostPreview;

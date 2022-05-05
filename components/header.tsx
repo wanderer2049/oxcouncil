@@ -1,39 +1,28 @@
 import { ReactNode } from 'react';
 import {
-  Box,
   Flex,
-  Avatar,
   HStack,
   VStack,
   Link,
   IconButton,
   Button,
   Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useColorModeValue,
   useColorMode,
-  useBreakpointValue,
   useDisclosure,
   Stack,
-  Image,
-  Icon,
   Text,
-  Collapse
+  Collapse,
+  Box
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
   CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
   MoonIcon, 
   SunIcon, 
-  AddIcon
 } from '@chakra-ui/icons';
-import { Logo } from './logo'
-import { Socials } from './socials'
+import { Logo } from './logo';
+import { Socials } from './socials';
 import theme from '../theme';
 
 interface NavItem {
@@ -55,9 +44,9 @@ const Links: Array<NavItem> = [
 export const Header = () => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
-  const bgColor = useColorModeValue('gray.100', 'gray.900')
-  const linkColor = useColorModeValue("black.900", "white.900")
-  const linkHoverColor = useColorModeValue("gray.500", "gray.400")
+  const bgColor = useColorModeValue('gray.100', 'gray.900');
+  const linkColor = useColorModeValue("black.900", "white.900");
+  const linkHoverColor = useColorModeValue("gray.500", "gray.400");
 
   return (
     <>
@@ -65,7 +54,7 @@ export const Header = () => {
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
             <Box>
-              <Logo boxSize='200px'/>
+              <Logo boxSize={'200px'} />
             </Box>
             <HStack
               as={'nav'}
@@ -83,7 +72,7 @@ export const Header = () => {
                   }}
                   href={link.href}
                   fontFamily={theme.fonts.heading}
-                  fontWeight={'900'}
+                  fontWeight={900}
                   key={index}
                   >
                   {link.label}
@@ -92,10 +81,10 @@ export const Header = () => {
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
-            <Box display={{ base: "none", md: "flex" }}>
-              <Socials twitter="https://twitter.com/oxcouncil" medium="#" discord="#"/>
+            <Box display={{ base: 'none', md: 'flex' }}>
+              <Socials twitter='https://twitter.com/oxcouncil' medium='#' discord='#'/>
             </Box>
-            <Button onClick={toggleColorMode} ml={7} rounded={'full'} width="20px"> 
+            <Button onClick={toggleColorMode} ml={7} rounded={'full'} width={'20px'}> 
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
             <Flex
@@ -130,13 +119,13 @@ export const Header = () => {
                   }}
                   href={link.href}
                   fontFamily={theme.fonts.heading}
-                  fontWeight={'900'}
+                  fontWeight={900}
                   key={index}
                   >
                   {link.label}
                 </Link>
               ))}
-              <Socials twitter="https://twitter.com/oxcouncil" medium="#" discord="#"/>
+              <Socials twitter='https://twitter.com/oxcouncil' medium='#' discord='#' />
             </VStack>
         </Collapse>  
       </Box>

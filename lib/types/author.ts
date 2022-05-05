@@ -3,4 +3,4 @@ type Author = {
   picture: string
 }
 
-export default Author
+export default Author;

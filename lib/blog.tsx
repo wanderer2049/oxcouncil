@@ -1,44 +1,44 @@
-import fs from 'fs'
-import { join } from 'path'
-import matter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
+import fs from 'fs';
+import { join } from 'path';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
 
-const postsDirectory = join(process.cwd(), 'blog')
+const postsDirectory = join(process.cwd(), 'blog');
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory)
+  return fs.readdirSync(postsDirectory);
 }
 
 export async function markdownToHtml(markdown: string) {
-  const result = await remark().use(html).process(markdown)
-  return result.toString()
+  const result = await remark().use(html).process(markdown);
+  return result.toString();
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(postsDirectory, `${realSlug}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data, content } = matter(fileContents)
+  const realSlug = slug.replace(/\.md$/, '');
+  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const { data, content } = matter(fileContents);
 
   type Items = {
     [key: string]: string
   }
 
-  const items: Items = {}
+  const items: Items = {};
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === 'slug') {
-      items[field] = realSlug
+      items[field] = realSlug;
     }
     
     if (field === 'content') {
-      items[field] = content
+      items[field] = content;
     }
 
     if (typeof data[field] !== 'undefined') {
-      items[field] = data[field]
+      items[field] = data[field];
     }
   })
 
@@ -46,10 +46,10 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 }
 
 export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs()
+  const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
-  return posts
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return posts;
 }

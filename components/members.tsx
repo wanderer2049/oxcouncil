@@ -107,7 +107,7 @@ export const MemberList = () => {
       twitter: "@"
     }, 
     {
-      name: "wander2049",
+      name: "wanderer2049",
       position: "Front-end Developer",
       profile: '/assets/member/wanderer2049.jpeg',
       bio: "just a dev.",

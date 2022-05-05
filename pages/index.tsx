@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/react';
 import DefaultLayout from '../components/layout'
 import { Hero } from '../components/hero';
-import { MemberList } from '../components/member';
+import { MemberList } from '../components/members';
 import PostCarousel from '../components/postCarousel';
 import { getAllPosts } from '../lib/blog';
 import Post from '../lib/types/post'

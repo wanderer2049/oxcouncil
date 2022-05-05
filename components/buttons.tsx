@@ -4,7 +4,6 @@ import { FaTwitter } from 'react-icons/fa';
 import { LinkIcon } from '@chakra-ui/icons';
 import { HiArrowRight } from 'react-icons/hi';
 import { MdPeopleOutline } from 'react-icons/md';
-import theme from '../theme';
 
 interface Props {
   text: string,
@@ -58,7 +57,7 @@ export const BrandButton = (props:Props) => {
       py={25} 
       fontWeight={'bold'}
       width={'200px'}
-      fontFamily={theme.fonts.heading}
+      fontFamily={'heading'}
       bg={'brand.100'}
       _hover={{
         bg: 'brand.300',
@@ -81,7 +80,7 @@ export const AltButton = (props:Props) => {
       py={25} 
       fontWeight={"bold"}
       width={'200px'}
-      fontFamily={theme.fonts.heading}
+      fontFamily={'heading'}
       leftIcon={<MdPeopleOutline />}
       href={props.link}>
         {props.text}

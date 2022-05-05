@@ -14,7 +14,6 @@ import { BsCalendarWeek } from 'react-icons/bs';
 import DateFormatter from '../components/dateFormatter';
 import { BrandButton } from '../components/buttons';
 import Author from '../lib/types/author';
-import theme from '../theme';
 
 type Props = {
   title: string
@@ -56,28 +55,28 @@ const PostPreview = ({
         p={{ base: '30px' }}
         >
         <Heading marginTop={5}
-          fontSize={{'base': '2xl', 'md': '3xl'}}
-          fontFamily={theme.fonts.heading}
+          fontSize={{base: '2xl', md: '3xl'}}
+          fontFamily={'heading'}
           >
-          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }}>
+          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`/blog/${slug}`}>
             {title}
           </Link>
         </Heading>
         <Stack 
-          spacing={3} 
           direction={{base:'column', md:'row'}} 
-          mt={'5'}
-          alignItems={{base:'left', md:'center'}}
-          color={textColor}
+          alignItems={{base:'left', md:'left'}}
+          zIndex={12}
+          ml={{base:'-8px', md:'0px'}}
+          mt={5}
         >
-          <HStack>
+          <HStack ml={{base:'8px', md:'0px'}}>
             <Avatar name={ author.name } src={ author.picture } size={'2xs'} />
-            <Text fontFamily={theme.fonts.heading} fontWeight={300}>{ author.name }</Text> 
+            <Text fontFamily={'heading'} fontWeight={300}>{ author.name }</Text> 
           </HStack>
-          <HStack>
-            <Text fontFamily={theme.fonts.heading} fontWeight={300} display={{base:'none', md:'inline-block'}}>&nbsp;-&nbsp;</Text>
+          <HStack >
+            <Text fontFamily={'heading'} fontWeight={300} display={{base:'none', md:'inline-block'}}>&nbsp;-&nbsp;</Text>
             <BsCalendarWeek />
-            <Text fontFamily={theme.fonts.heading} fontWeight={300}><DateFormatter dateString={date} /></Text>
+            <Text fontFamily={'heading'} fontWeight={300}><DateFormatter dateString={date} /></Text>
           </HStack> 
         </Stack>
         <Text

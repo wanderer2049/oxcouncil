@@ -23,7 +23,6 @@ import {
 } from '@chakra-ui/icons';
 import { Logo } from './logo';
 import { Socials } from './socials';
-import theme from '../theme';
 
 interface NavItem {
   label: string;
@@ -71,7 +70,7 @@ export const Header = () => {
                     color: linkHoverColor
                   }}
                   href={link.href}
-                  fontFamily={theme.fonts.heading}
+                  fontFamily={'heading'}
                   fontWeight={900}
                   key={index}
                   >
@@ -82,7 +81,7 @@ export const Header = () => {
           </HStack>
           <Flex alignItems={'center'}>
             <Box display={{ base: 'none', md: 'flex' }}>
-              <Socials twitter='https://twitter.com/oxcouncil' medium='#' discord='#'/>
+              <Socials twitter='oxcouncil' medium='#' discord='#'/>
             </Box>
             <Button onClick={toggleColorMode} ml={7} rounded={'full'} width={'20px'}> 
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
@@ -118,7 +117,7 @@ export const Header = () => {
                     color: linkHoverColor
                   }}
                   href={link.href}
-                  fontFamily={theme.fonts.heading}
+                  fontFamily={'heading'}
                   fontWeight={900}
                   key={index}
                   >

@@ -35,12 +35,12 @@ const Links: Array<NavItem> = [
     href: '/'
   },
   {
-    label: 'Members',
-    href: '/members'
-  },
-  {
     label: 'Projects',
     href: '/projects'
+  },
+  {
+    label: 'Members',
+    href: '/members'
   },
   {
     label: 'Blog',

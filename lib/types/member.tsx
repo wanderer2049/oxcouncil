@@ -4,6 +4,7 @@ type Member = {
   profile: string
   bio: string
   twitter: string
+  role: string
 }
 
 export default Member;

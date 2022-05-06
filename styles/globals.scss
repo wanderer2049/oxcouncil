@@ -67,3 +67,17 @@ a {
     text-decoration: underline;
   }
 }
+
+.chakra-ui-dark {
+  .slick-dots li button:before {
+    font-size: 15px;
+    color: #ffffff !important;
+  }
+}
+
+.chakra-ui-light {
+  .slick-dots li button:before {
+    font-size: 15px;
+    color: var(--chakra-colors-brand-100) !important;
+  }
+}

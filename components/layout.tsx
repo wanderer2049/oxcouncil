@@ -15,7 +15,7 @@ type Props = {
 export default function DefaultLayout({ children }: Props) {
   return (
     <>    
-      <Container maxW={'980px'} mt={'20px'} px={5}>
+      <Container maxW={'980px'} mt={'20px'} px={5} >
         <Header />
       </Container>
       <main>{ children }</main>

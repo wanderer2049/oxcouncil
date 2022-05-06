@@ -32,11 +32,19 @@ interface NavItem {
 const Links: Array<NavItem> = [
   {
     label: 'Home',
-    href: '/',
+    href: '/'
+  },
+  {
+    label: 'Members',
+    href: '/members'
+  },
+  {
+    label: 'Projects',
+    href: '/projects'
   },
   {
     label: 'Blog',
-    href: '/blog',
+    href: '/blog'
   },
 ];
 
@@ -81,7 +89,7 @@ export const Header = () => {
           </HStack>
           <Flex alignItems={'center'}>
             <Box display={{ base: 'none', md: 'flex' }}>
-              <Socials twitter='oxcouncil' medium='#' discord='#'/>
+              <Socials twitter='oxcouncil' discord='#'/>
             </Box>
             <Button onClick={toggleColorMode} ml={7} rounded={'full'} width={'20px'}> 
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
@@ -124,7 +132,7 @@ export const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <Socials twitter='https://twitter.com/oxcouncil' medium='#' discord='#' />
+              <Socials twitter='https://twitter.com/oxcouncil' discord='#' />
             </VStack>
         </Collapse>  
       </Box>

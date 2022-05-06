@@ -19,12 +19,13 @@ export const Hero = () => {
         <Heading
           fontWeight={900}
           fontSize={{ base: '4xl', sm: '5xl', md: '8xl' }}
-          lineHeight={'110%'}>
+          lineHeight={'110%'}
+          >
           <Text as={'span'} color='brand.100'>
             ox
           </Text>
           <Text as={'span'}>
-            council
+            Council
           </Text>
         </Heading>
         <Text color={'white.500'} fontSize={{ base: '2xl', sm: '2xl', md: '4xl' }} lineHeight={'110%'} maxW={'3xl'} fontWeight={300}>

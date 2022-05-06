@@ -40,7 +40,7 @@ const Members = ({ allPosts }: Props) => {
               Our Vibrant Community
             </Text>
             <Text color={'white.500'} fontSize={{ base: '2xl'}} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} textAlign={'center'} pt={'15px'} fontFamily={'body'}>
-              Come and join us today, what says you?
+              Come and join us today, what say you?
             </Text>
           </Heading>
         </Stack>

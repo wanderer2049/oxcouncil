@@ -3,6 +3,7 @@ import { Link, Button, useColorModeValue } from '@chakra-ui/react';
 import { FaTwitter } from 'react-icons/fa';
 import { LinkIcon } from '@chakra-ui/icons';
 import { HiArrowRight } from 'react-icons/hi';
+import { GiMagicHat } from 'react-icons/gi';
 import { MdPeopleOutline } from 'react-icons/md';
 
 interface Props {
@@ -81,7 +82,7 @@ export const AltButton = (props:Props) => {
       fontWeight={"bold"}
       width={'200px'}
       fontFamily={'heading'}
-      leftIcon={<MdPeopleOutline />}
+      leftIcon={<GiMagicHat />}
       href={props.link}>
         {props.text}
     </Button>

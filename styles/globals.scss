@@ -73,6 +73,13 @@ a {
     font-size: 15px;
     color: #ffffff !important;
   }
+
+  .slick-slide.slick-active.slick-center.slick-current {
+    > div > div > div {
+      -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 10px 18px 7px rgba(0,0,0,0.1); 
+      box-shadow: 0px 10px 13px -7px #000000, 0px 10px 18px 7px rgba(0,0,0,0.1);
+    }
+  }
 }
 
 .chakra-ui-light {
@@ -80,4 +87,8 @@ a {
     font-size: 15px;
     color: var(--chakra-colors-brand-100) !important;
   }
+}
+
+ul.slick-dots {
+  bottom: -50px;
 }

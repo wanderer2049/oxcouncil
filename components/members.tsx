@@ -180,12 +180,16 @@ export const MemberItem = ({ member }:Props) => {
 export const MemberCarouselItem = ({ member }:Props) => {
   const textColor = useColorModeValue("gray.600", "white.900");
   const bgColor = useColorModeValue('blackAlpha.100', 'whiteAlpha.100');
+  const borderColor = useColorModeValue("gray.100", "whiteAlpha.100");
   return (
     <Center py={6} px={2}>
       <Box
         maxW={'320px'}
         w={'full'}
         bg={useColorModeValue('white', 'gray.900')}
+        borderWidth={'1px'}
+        borderStyle={'solid'}
+        borderColor={borderColor}
         rounded={'lg'}
         p={6}
         textAlign={'center'}>

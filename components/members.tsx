@@ -248,8 +248,8 @@ export const MemberList = ({ role }:Filter) => {
 }
 
 const settings = {
-  speed: 500,
-  autoplaySpeed: 8000,
+  speed: 700,
+  autoplaySpeed: 2000,
   dots: true,
   arrows: false,
   autoplay: true,

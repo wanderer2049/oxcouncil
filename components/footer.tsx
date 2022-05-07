@@ -36,6 +36,7 @@ export const Footer = () => {
         </Box>
         <Text pt={6} fontSize={'sm'} textAlign={'center'}>
           &copy; The OxCouncil. All rights reserved.
+          Built with love by @wanderer2049. Logo designed by @Gabriel.
         </Text>
       </Box>
     </Box>

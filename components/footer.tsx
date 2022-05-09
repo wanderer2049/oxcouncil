@@ -34,9 +34,11 @@ export const Footer = () => {
         <Box mt={4}>
           <Socials twitter='https://twitter.com/oxcouncil' discord='#'/>
         </Box>
-        <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-          &copy; The OxCouncil. All rights reserved.
-          Built with love by @wanderer2049. Logo designed by @Gabriel.
+        <Text pt={6} fontSize={'md'} textAlign={'center'} textColor={useColorModeValue('gray.700', 'gray.500')}>
+          &copy; The OxCouncil. All rights reserved.<br/>
+        </Text>
+        <Text fontSize={'sm'} textAlign={'center'} textColor={useColorModeValue('gray.500', 'gray.600')}>
+          Built with ❤️ by wanderer2049. Logo design by Gabriel Fraga.
         </Text>
       </Box>
     </Box>

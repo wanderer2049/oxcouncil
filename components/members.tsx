@@ -20,19 +20,27 @@ import Slider from "react-slick";
 
 let members = [
   {
+    name: "Bakintoast",
+    position: "Founder/Managing Director",
+    profile: '/assets/members/bakintoasti.jpeg',
+    bio: "Lorem ipsum dolor sit amet",
+    twitter: "@core: false",
+    role: 'core'
+  }, 
+  {
     name: "Achi",
-    position: "Project Manager",
+    position: "Co-founder/Assistant Director",
     profile: '/assets/members/achi.jpeg',
     bio: "Lorem ipsum dolor sit amet",
     twitter: "achimo26",
     role: 'core'
   }, 
   {
-    name: "Bakintoast",
-    position: "Eulogy Partner, Consultant",
-    profile: '/assets/members/bakintoasti.jpeg',
-    bio: "Lorem ipsum dolor sit amet",
-    twitter: "@core: false",
+    name: "Gabriel Fraga",
+    position: "Co-founder/UX&Design",
+    profile: '/assets/members/gabrielfraga.jpeg',
+    bio: "Flamengo. Chelsea. @BTLVid Designer.",
+    twitter: "GabFoligno",
     role: 'core'
   }, 
   {
@@ -45,11 +53,11 @@ let members = [
   }, 
   {
     name: "Bo",
-    position: "Managing Director",
+    position: "Eulogy Partner/Consultant",
     profile: '/assets/members/bo.jpeg',
     bio: "Lorem ipsum dolor sit amet",
     twitter: "@",
-    role: 'core'
+    role: 'contributor'
   }, 
   {
     name: "Bz",
@@ -66,14 +74,6 @@ let members = [
     bio: "Crypto-sec",
     twitter: "CryptoRDog",
     role: 'contributor'
-  }, 
-  {
-    name: "Gabriel Fraga",
-    position: "UX / Graphic Designer",
-    profile: '/assets/members/gabrielfraga.jpeg',
-    bio: "Flamengo. Chelsea. @BTLVid Designer.",
-    twitter: "GabFoligno",
-    role: 'core'
   }, 
   {
     name: "Macrodemon",
@@ -182,7 +182,7 @@ export const MemberCarouselItem = ({ member }:Props) => {
   const bgColor = useColorModeValue('blackAlpha.100', 'whiteAlpha.100');
   const borderColor = useColorModeValue("gray.100", "whiteAlpha.100");
   return (
-    <Center py={6} px={2}>
+    <Center py={6} px={1}>
       <Box
         maxW={'320px'}
         w={'full'}

@@ -1,29 +1,40 @@
 import type { ReactElement } from 'react';
-import { ReactNode } from 'react';
+import React, { ChangeEvent, ReactNode } from 'react';
 import {
   Heading,
   Stack,
   Box,
   Text,
   Container,
-  useColorModeValue
+  useColorModeValue,
 } from '@chakra-ui/react';
 import DefaultLayout from '../components/layout'
 import { Hero } from '../components/hero';
-import { MemberList, MemberCarousel } from '../components/members';
+import { MemberCarousel } from '../components/members';
+import ProjectTab from '../components/projectTab';
 import PostCarousel from '../components/postCarousel';
 import { getAllPosts } from '../lib/blog';
+import { getAllProjects } from '../lib/projects';
 import Post from '../lib/types/post'
+import Project from '../lib/types/project'
 
 type Props = {
   allPosts: Post[]
+  allProjects: Project[]
 }
 
-const Home = ({ allPosts }: Props) => {
-  const posts = allPosts
+const Home = ({ allPosts, allProjects }: Props) => {
+  const posts = allPosts;
+  const projects = allProjects;
+
   return (
     <>
       <Hero />
+      <Container width={'100%'} maxWidth={'100%'} py={100} bgColor={useColorModeValue('blackAlpha.300','blackAlpha.300')}>
+        <Container maxW={'980px'}>
+          <ProjectTab projects={projects} />
+        </Container>
+      </Container>
       <Container bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')} width={'100%'} maxWidth={'100%'} py={70} pt={100}>
         <Container maxW={'980px'}>
           <PostCarousel posts={posts} />
@@ -73,7 +84,17 @@ export const getStaticProps = async () => {
     'excerpt',
   ])
 
+  const allProjects = getAllProjects([
+    'title',
+    'tagline',
+    'date',
+    'slug',
+    'logo',
+    'featureImage',
+    'content'
+  ]);
+
   return {
-    props: { allPosts },
+    props: { allPosts, allProjects },
   };
 }

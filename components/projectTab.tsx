@@ -117,7 +117,7 @@ const ProjectList = ({ projects }: Props) => {
                       fontSize={{base: '2xl', md: '3xl'}}
                       fontFamily={'heading'}
                     >
-                      <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={''}>
+                      <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`/projects/${project.slug}`}>
                         Lorem ipsum
                       </Link>
                     </Heading>

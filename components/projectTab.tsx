@@ -39,8 +39,8 @@ const ProjectList = ({ projects }: Props) => {
         my={8}
       >
         <Box>
-          <Tabs orientation={'vertical'} isLazy defaultIndex={0}>
-            <TabList width={'70%'} border={'none'} mr={10}>
+          <Tabs orientation={'vertical'} isLazy defaultIndex={0} display={{'base':'block', 'md':'flex'}}>
+            <TabList width={{'base':'100%', 'md':'70%'}} border={'none'} mr={{'base':0, 'md':10}} mb={{'base':5, 'md':10}}>
               <Box mb={10}>
                 <Heading
                   fontWeight={900}
@@ -58,6 +58,11 @@ const ProjectList = ({ projects }: Props) => {
                   </Text>
                 </Heading>
               </Box>
+              <Box
+                overflowY={'scroll'}
+                whiteSpace={'nowrap'}
+                pl={{ 'base':'2px', 'md':'0px' }}
+              >
               {projects.map((project, index) => (
                 <Tab 
                   mb={5}
@@ -67,6 +72,8 @@ const ProjectList = ({ projects }: Props) => {
                   _hover={{ color: tabHoverTextColor, bg: tabHoverBgColor }} 
                   _selected={{ color: tabHoverTextColor, bg: tabSelectedBgColor, borderColor: 'whiteAlpha.300' }}
                   key={index}
+                  width={''}
+                  display={{'base':'inline-block', 'md':'block'}}
                 >
                   <HStack height={'100px'}>
                     <Avatar name='Test' src={ project.logo } mr='5' /> 
@@ -85,6 +92,7 @@ const ProjectList = ({ projects }: Props) => {
                         lineHeight={'20px'}
                         _hover={{ textDecoration: 'none'}}
                         href={`/projects/${project.slug}`}
+                        maxWidth={'100px'}
                       >
                         Learn More  <Icon as={ChevronRightIcon} w={4} h={4} />
                       </Link>
@@ -92,9 +100,9 @@ const ProjectList = ({ projects }: Props) => {
                   </HStack>
                 </Tab>
               ))}
-              
+              </Box>
             </TabList>
-            <TabPanels width={'100%'} ml={'10'} border='1px solid' borderColor='whiteAlpha.100' borderRadius={10}  bg={tabPanelBgColor} overflow={'hidden'}>
+            <TabPanels width={'100%'} ml={{'base':0, 'md':10}} border='1px solid' borderColor='whiteAlpha.100' borderRadius={10}  bg={tabPanelBgColor} overflow={'hidden'}>
               {projects.map((project, index) => (
                 <TabPanel p={0} m={0} key={index}>
                   <Box

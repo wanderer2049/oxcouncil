@@ -59,7 +59,7 @@ const ProjectList = ({ projects }: Props) => {
                 </Heading>
               </Box>
               <Box
-                overflowY={'scroll'}
+                overflowY={{'base':'scroll', 'md':'inherit'}}
                 whiteSpace={'nowrap'}
                 pl={{ 'base':'2px', 'md':'0px' }}
               >
@@ -67,12 +67,12 @@ const ProjectList = ({ projects }: Props) => {
                 <Tab 
                   mb={5}
                   p={5} 
+                  mr={{'base':'4', 'md':'0'}}
                   borderRadius={10} 
                   border="1px solid transparent"
                   _hover={{ color: tabHoverTextColor, bg: tabHoverBgColor }} 
                   _selected={{ color: tabHoverTextColor, bg: tabSelectedBgColor, borderColor: 'whiteAlpha.300' }}
                   key={index}
-                  width={''}
                   display={{'base':'inline-block', 'md':'block'}}
                 >
                   <HStack height={'100px'}>

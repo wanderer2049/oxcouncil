@@ -1,6 +1,4 @@
-import React, { Component } from "react";
-import Slider from 'react-slick';
-
+import React from "react";
 import {
   Box,
   Text,
@@ -19,16 +17,14 @@ import {
   Stack
 } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import Project from '../lib/types/project';
+import Project from '../types/project';
 
 type Props = {
   projects: Project[]
 }
 
 const ProjectList = ({ projects }: Props) => {
-  const bgColor = useColorModeValue('gray.50', 'gray.900');
   const tabHoverTextColor = useColorModeValue('blackAlpha.900', 'white');
-  const tabSelectedTextColor = useColorModeValue('whiteAlpha.500', 'white');
   const tabSelectedBgColor = useColorModeValue('whiteAlpha.500', 'whiteAlpha.200');
   const tabHoverBgColor = useColorModeValue('whiteAlpha.500', 'whiteAlpha.100');
   const tabPanelBgColor = useColorModeValue('whiteAlpha.500', 'whiteAlpha.100');

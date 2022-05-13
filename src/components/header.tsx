@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import {
   Flex,
   HStack,
@@ -6,12 +5,9 @@ import {
   Link,
   IconButton,
   Button,
-  Menu,
   useColorModeValue,
   useColorMode,
   useDisclosure,
-  Stack,
-  Text,
   Collapse,
   Box
 } from '@chakra-ui/react';
@@ -44,7 +40,7 @@ const Links: Array<NavItem> = [
   },
   {
     label: 'Blog',
-    href: '/blog'
+    href: '/posts'
   },
 ];
 

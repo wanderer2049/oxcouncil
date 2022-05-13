@@ -1,7 +1,6 @@
 import {
   Stack,
   useColorModeValue,
-  chakra,
   Link,
   VisuallyHidden,
 } from '@chakra-ui/react';

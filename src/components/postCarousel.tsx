@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import PostPreview from './postPreview';
-import Post from '../lib/types/post';
+import Post from '../types/post';
 
 const settings = {
   dots: false,

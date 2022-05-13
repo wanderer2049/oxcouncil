@@ -1,38 +1,28 @@
-import type { ReactElement, ReactNode } from 'react';
+import type { ReactElement } from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import Head from 'next/head';
 import {
   Box,
   Container,
   Stack,
   Heading,
   Text,
-  Link,
-  Image,
-  Icon,
-  HStack,
-  Avatar,
-  Button,
   useColorModeValue,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator
 } from '@chakra-ui/react';
-import { BsCalendarWeek } from 'react-icons/bs';
-import DateFormatter from '../../components/dateFormatter';
 import DefaultLayout from '../../components/layout';
-import { getPostBySlug, getAllProjects, markdownToHtml } from '../../lib/projects';
-import ProjectType from '../../lib/types/project';
+import { getPostBySlug, getAllPosts, markdownToHtml } from '../../lib/posts';
+import Project from '../../types/project';
 
 type Props = {
-  project: ProjectType
-  moreProjects: ProjectType[]
+  project: Project
+  moreProjects: Project[]
   preview?: boolean
 }
 
-const Post = ({ project, moreProjects, preview }: Props) => {
+const ProjectPage = ({ project }: Props) => {
   const router = useRouter();
   const bgColor = useColorModeValue('blackAlpha.100', 'whiteAlpha.100');
   const headingColor = useColorModeValue('gray.50','gray.50');
@@ -128,7 +118,7 @@ const Post = ({ project, moreProjects, preview }: Props) => {
   );
 }
 
-Post.getLayout = function getLayout(page: ReactElement) {
+ProjectPage.getLayout = function getLayout(page: ReactElement) {
   return (
     <DefaultLayout>
       {page}
@@ -142,10 +132,10 @@ type Params = {
   }
 }
 
-export default Post;
+export default ProjectPage;
 
 export async function getStaticProps({ params }: Params) {
-  const project = getPostBySlug(params.slug, [
+  const project = getPostBySlug('projects', params.slug, [
     'title',
     'tagline',
     'date',
@@ -167,7 +157,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const projects = getAllProjects(['slug'])
+  const projects = getAllPosts('projects', ['slug'])
 
   return {
     paths: projects.map((project) => {

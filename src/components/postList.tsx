@@ -2,14 +2,10 @@ import React from 'react';
 import Slider from 'react-slick';
 import {
   Box,
-  Text,
   useColorModeValue,
-  Container
 } from '@chakra-ui/react';
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
-import { BrandButton } from '../components/buttons';
 import PostPreview from './postPreview';
-import Post from '../lib/types/post';
+import Post from '../types/post';
 
 type Props = {
   posts: Post[]

@@ -4,18 +4,17 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const postsDirectory = join(process.cwd(), 'blog');
-
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
-}
+const mainDirectory = process.cwd();
 
 export async function markdownToHtml(markdown: string) {
   const result = await remark().use(html).process(markdown);
   return result.toString();
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
+export function getPostBySlug(directory: string, slug: string, fields: string[] = []) {
+
+  const postsDirectory = join(mainDirectory, directory);
+
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -27,7 +26,6 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 
   const items: Items = {};
 
-  // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === 'slug') {
       items[field] = realSlug;
@@ -45,10 +43,11 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   return items
 }
 
-export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs();
+export function getAllPosts(directory: string, fields: string[] = []) {
+  const postsDirectory = join(mainDirectory, directory);
+  const slugs = fs.readdirSync(postsDirectory);
   const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
+    .map((slug) => getPostBySlug(directory, slug, fields))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;

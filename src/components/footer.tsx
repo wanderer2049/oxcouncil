@@ -4,8 +4,6 @@ import {
   Text,
   useColorModeValue
 } from '@chakra-ui/react';
-import { FaTwitter, FaMedium, FaDiscord} from 'react-icons/fa';
-import { ReactNode } from 'react';
 import { Logo } from './logo';
 import { Socials } from './socials';
 

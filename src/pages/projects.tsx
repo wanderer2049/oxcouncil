@@ -1,22 +1,20 @@
 import type { ReactElement } from 'react';
-import { ReactNode } from 'react';
 import {
   Container,
   Stack,
   Heading,
-  Text,
-  useColorModeValue
+  Text
 } from '@chakra-ui/react';
-import DefaultLayout from '../components/layout'
+import DefaultLayout from '../components/layout';
 import ProjectList from '../components/projectList';
-import { getAllProjects } from '../lib/projects';
-import Project from '../lib/types/project'
+import { getAllPosts } from '../lib/posts';
+import Project from '../types/project';
 
 type Props = {
   allProjects: Project[]
 }
 
-const Projects = ({ allProjects }: Props) => {  
+const ProjectsPage = ({ allProjects }: Props) => {  
   return (
     <>
       <Container maxW={'5xl'}>
@@ -51,7 +49,7 @@ const Projects = ({ allProjects }: Props) => {
   );
 }
 
-Projects.getLayout = function getLayout(page: ReactElement) {
+ProjectsPage.getLayout = function getLayout(page: ReactElement) {
   return (
     <DefaultLayout>
       {page}
@@ -59,10 +57,10 @@ Projects.getLayout = function getLayout(page: ReactElement) {
   );
 }
 
-export default Projects;
+export default ProjectsPage;
 
 export const getStaticProps = async () => {
-  const allProjects = getAllProjects([
+  const allProjects = getAllPosts('projects', [
     'title',
     'tagline',
     'date',

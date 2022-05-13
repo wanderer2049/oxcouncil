@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-
+import React from "react";
 import {
   Box,
   SimpleGrid,
@@ -7,7 +6,7 @@ import {
 } from '@chakra-ui/react';
 
 import ProjectPreview from './projectPreview';
-import Project from '../lib/types/project';
+import Project from '../types/project';
 
 type Props = {
   projects: Project[]

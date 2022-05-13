@@ -3,8 +3,7 @@ import {
   Heading,
   Link,
   Text,
-  Image,
-  useColorModeValue,
+  useColorModeValue
 } from '@chakra-ui/react';
 import { BrandButton } from '../components/buttons';
 

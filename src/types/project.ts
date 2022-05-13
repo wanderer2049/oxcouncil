@@ -1,4 +1,4 @@
-type ProjectType = {
+type Project = {
   title: string
   date: string
   tagline: string
@@ -11,4 +11,4 @@ type ProjectType = {
   content: string
 }
 
-export default ProjectType;
+export default Project;

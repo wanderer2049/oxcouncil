@@ -3,18 +3,12 @@ import {
   Box,
   Center,
   Text,
-  Stack,
-  HStack,
-  Tag,
   useColorModeValue,
   SimpleGrid,
-  Avatar,
-  Flex,
-  Spacer,
-  IconButton
+  Avatar
 } from '@chakra-ui/react';
 import { Socials } from '../components/socials';
-import Member from '../lib/types/member';
+import Member from '../types/member';
 import React, { Component } from "react";
 import Slider from "react-slick";
 

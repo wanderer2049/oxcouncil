@@ -1,25 +1,19 @@
 import type { ReactElement } from 'react';
-import { ReactNode } from 'react';
 import {
   Container,
   Stack,
-  Box,
-  Flex,
   Heading,
   Text,
-  useColorModeValue
 } from '@chakra-ui/react';
-import DefaultLayout from '../components/layout'
-import PostList from '../components/postList';
-import { getAllPosts } from '../lib/blog';
-import Post from '../lib/types/post'
+import DefaultLayout from '../components/layout';
+import Post from '../types/post';
 import { MemberList } from '../components/members';
 
 type Props = {
   allPosts: Post[]
 }
 
-const Members = ({ allPosts }: Props) => {  
+const MembersPage = ({ allPosts }: Props) => {  
   return (
     <>
       <Container maxW={'5xl'}>
@@ -80,7 +74,7 @@ const Members = ({ allPosts }: Props) => {
   );
 }
 
-Members.getLayout = function getLayout(page: ReactElement) {
+MembersPage.getLayout = function getLayout(page: ReactElement) {
   return (
     <DefaultLayout>
       {page}
@@ -88,4 +82,4 @@ Members.getLayout = function getLayout(page: ReactElement) {
   );
 }
 
-export default Members;
+export default MembersPage;

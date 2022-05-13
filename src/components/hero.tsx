@@ -1,5 +1,4 @@
 import {
-  Flex,
   Container,
   Heading,
   Stack,
@@ -33,7 +32,7 @@ export const Hero = () => {
         </Text>
         <Stack spacing={6} direction={{base:'column', md:'row'}}>
           <AltButton text='See Our Projects' link='/projects' />
-          <BrandButton text='Latest Blog' link='/blog' />
+          <BrandButton text='Latest Blog' link='/posts' />
         </Stack>
       </Stack>
     </Container>

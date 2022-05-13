@@ -6,13 +6,12 @@ import {
   Text,
   Stack,
   HStack,
-  useColorModeValue,
-  Flex
+  useColorModeValue
 } from '@chakra-ui/react';
 import { BsCalendarWeek } from 'react-icons/bs';
-import DateFormatter from '../components/dateFormatter';
+import DateFormatter from '../lib/dateFormatter';
 import { BrandButton } from '../components/buttons';
-import Author from '../lib/types/author';
+import Author from '../types/author';
 
 type Props = {
   title: string
@@ -58,7 +57,7 @@ const PostPreview = ({
           fontSize={{base: '2xl', md: '3xl'}}
           fontFamily={'heading'}
           >
-          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`/blog/${slug}`}>
+          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`/posts/${slug}`}>
             {title}
           </Link>
         </Heading>
@@ -87,7 +86,7 @@ const PostPreview = ({
         >
           {excerpt.split(" ").splice(0,30).join(" ")}...
         </Text>        
-        <BrandButton text='Read More' link={`/blog/${slug}`} />
+        <BrandButton text='Read More' link={`/posts/${slug}`} />
       </Box>
     </>
   );

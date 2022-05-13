@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import React, { ChangeEvent, ReactNode } from 'react';
+import React from 'react';
 import {
   Heading,
   Stack,
@@ -8,22 +8,21 @@ import {
   Container,
   useColorModeValue,
 } from '@chakra-ui/react';
-import DefaultLayout from '../components/layout'
+import DefaultLayout from '../components/layout';
 import { Hero } from '../components/hero';
 import { MemberCarousel } from '../components/members';
 import ProjectTab from '../components/projectTab';
 import PostCarousel from '../components/postCarousel';
-import { getAllPosts } from '../lib/blog';
-import { getAllProjects } from '../lib/projects';
-import Post from '../lib/types/post'
-import Project from '../lib/types/project'
+import { getAllPosts } from '../lib/posts';
+import Post from '../types/post';
+import Project from '../types/project';
 
 type Props = {
   allPosts: Post[]
   allProjects: Project[]
 }
 
-const Home = ({ allPosts, allProjects }: Props) => {
+const HomePage = ({ allPosts, allProjects }: Props) => {
   const posts = allPosts;
   const projects = allProjects;
 
@@ -64,7 +63,7 @@ const Home = ({ allPosts, allProjects }: Props) => {
   );
 }
 
-Home.getLayout = function getLayout(page: ReactElement) {
+HomePage.getLayout = function getLayout(page: ReactElement) {
   return (
     <DefaultLayout>
       {page}
@@ -72,10 +71,10 @@ Home.getLayout = function getLayout(page: ReactElement) {
   );
 }
 
-export default Home;
+export default HomePage;
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
+  const allPosts = getAllPosts('posts', [
     'title',
     'date',
     'slug',
@@ -84,7 +83,7 @@ export const getStaticProps = async () => {
     'excerpt',
   ])
 
-  const allProjects = getAllProjects([
+  const allProjects = getAllPosts('projects', [
     'title',
     'tagline',
     'date',

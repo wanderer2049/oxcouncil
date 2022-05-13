@@ -1,7 +1,6 @@
-import type { ReactElement, ReactNode } from 'react';
+import type { ReactElement } from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import Head from 'next/head';
 import {
   Box,
   Container,
@@ -21,18 +20,18 @@ import {
   BreadcrumbSeparator
 } from '@chakra-ui/react';
 import { BsCalendarWeek } from 'react-icons/bs';
-import DateFormatter from '../../components/dateFormatter';
+import DateFormatter from '../../lib/dateFormatter';
 import DefaultLayout from '../../components/layout';
-import { getPostBySlug, getAllPosts, markdownToHtml } from '../../lib/blog';
-import PostType from '../../lib/types/post';
+import { getPostBySlug, getAllPosts, markdownToHtml } from '../../lib/posts';
+import Post from '../../types/post';
 
 type Props = {
-  post: PostType
-  morePosts: PostType[]
+  post: Post
+  morePosts: Post[]
   preview?: boolean
 }
 
-const Post = ({ post, morePosts, preview }: Props) => {
+const PostPage = ({ post }: Props) => {
   const router = useRouter();
   const bgColor = useColorModeValue('blackAlpha.100', 'whiteAlpha.100');
   const headingColor = useColorModeValue('gray.50','gray.50');
@@ -95,7 +94,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
                     <BreadcrumbLink href='/' _hover={{textDecoration: 'none'}}>Home</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbItem>
-                    <BreadcrumbLink href='/blog' _hover={{textDecoration: 'none'}} >Blog</BreadcrumbLink>
+                    <BreadcrumbLink href='/posts' _hover={{textDecoration: 'none'}} >Blog</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbItem isCurrentPage isLastChild>
                     <BreadcrumbLink href='#' _hover={{textDecoration: 'none'}}>{post.title}</BreadcrumbLink>
@@ -136,7 +135,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
   );
 }
 
-Post.getLayout = function getLayout(page: ReactElement) {
+PostPage.getLayout = function getLayout(page: ReactElement) {
   return (
     <DefaultLayout>
       {page}
@@ -150,10 +149,10 @@ type Params = {
   }
 }
 
-export default Post;
+export default PostPage;
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
+  const post = getPostBySlug('posts', params.slug, [
     'title',
     'date',
     'slug',
@@ -175,7 +174,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const posts = getAllPosts('posts', ['slug'])
 
   return {
     paths: posts.map((post) => {

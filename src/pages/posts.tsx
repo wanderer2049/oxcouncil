@@ -1,22 +1,20 @@
 import type { ReactElement } from 'react';
-import { ReactNode } from 'react';
 import {
   Container,
   Stack,
   Heading,
-  Text,
-  useColorModeValue
+  Text
 } from '@chakra-ui/react';
-import DefaultLayout from '../components/layout'
+import DefaultLayout from '../components/layout';
 import PostList from '../components/postList';
-import { getAllPosts } from '../lib/blog';
-import Post from '../lib/types/post'
+import { getAllPosts } from '../lib/posts';
+import Post from '../types/post';
 
 type Props = {
   allPosts: Post[]
 }
 
-const Blog = ({ allPosts }: Props) => {  
+const PostsPage = ({ allPosts }: Props) => {  
   return (
     <>
       <Container maxW={'5xl'}>
@@ -51,7 +49,7 @@ const Blog = ({ allPosts }: Props) => {
   );
 }
 
-Blog.getLayout = function getLayout(page: ReactElement) {
+PostsPage.getLayout = function getLayout(page: ReactElement) {
   return (
     <DefaultLayout>
       {page}
@@ -59,10 +57,10 @@ Blog.getLayout = function getLayout(page: ReactElement) {
   );
 }
 
-export default Blog;
+export default PostsPage;
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
+  const allPosts = getAllPosts('posts', [
     'title',
     'date',
     'slug',

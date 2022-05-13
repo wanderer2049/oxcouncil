@@ -1,10 +1,8 @@
-import { ReactNode } from 'react';
-import { Link, Button, useColorModeValue } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 import { FaTwitter } from 'react-icons/fa';
 import { LinkIcon } from '@chakra-ui/icons';
 import { HiArrowRight } from 'react-icons/hi';
 import { GiMagicHat } from 'react-icons/gi';
-import { MdPeopleOutline } from 'react-icons/md';
 
 interface Props {
   text: string,

@@ -14,7 +14,15 @@ type Props = {
 
 export default function DefaultLayout({ children }: Props) {
   return (
-    <>    
+    <>
+      <Head>
+        <title>The oxCouncil - Seeing through the future of finance.</title>
+        <meta property="og:title" content="The oxCouncil"/>
+        <meta property="og:description" content="Seeing through the future of finance."/>
+        <meta property="og:image" content="/public/assets/logo.svg"/>
+        <meta property="og:image:width" content="200"/>
+        <meta property="og:image:height" content="35"/>
+      </Head>
       <Container maxW={'980px'} mt={'20px'} px={5} >
         <Header />
       </Container>

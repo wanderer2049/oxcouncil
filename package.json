@@ -21,6 +21,7 @@
     "framer-motion": "^6.3.2",
     "gray-matter": "^4.0.3",
     "next": "12.1.5",
+    "next-seo": "^5.4.0",
     "path": "^0.12.7",
     "process": "^0.11.10",
     "react": "18.1.0",

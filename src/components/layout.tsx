@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import { NextSeo } from 'next-seo';
 import {
   Container,
   useColorModeValue
@@ -14,15 +13,32 @@ type Props = {
 
 export default function DefaultLayout({ children }: Props) {
   return (
-    <>
-      <Head>
-        <title>The oxCouncil - Seeing through the future of finance.</title>
-        <meta property="og:title" content="The oxCouncil"/>
-        <meta property="og:description" content="Seeing through the future of finance."/>
-        <meta property="og:image" content="/public/assets/logo.svg"/>
-        <meta property="og:image:width" content="200"/>
-        <meta property="og:image:height" content="35"/>
-      </Head>
+    <>    
+       <NextSeo
+        title='The oxCouncil'
+        description='We are a volunteer-run organization seeing through the future of finance.'
+        canonical='https://oxcouncil.com/'
+        openGraph={{
+          url: 'https://oxcouncil.com/',
+          title: 'The oxCouncil',
+          description: 'We are a volunteer-run organization seeing through the future of finance.',
+          images: [
+            {
+              url: '/assets/logo.svg',
+              width: 200,
+              height: 35,
+              alt: 'The oxCouncil',
+            },
+          ],
+          site_name: 'The oxCouncil'
+        }}
+        twitter={{
+          handle: '@oxcouncil',
+          site: '@oxcouncil',
+          cardType: 'summary_large_image',
+        }}
+      />
+
       <Container maxW={'980px'} mt={'20px'} px={5} >
         <Header />
       </Container>

@@ -40,10 +40,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
           description: 'Seeing through the future of finance. DAO Consultancy.',
           images: [
             {
-              url: 'https://oxcouncil.vercel.app/assets/logo-light.svg',
+              url: 'https://oxcouncil.vercel.app/assets/logo-og.jpg',
               width: 1200,
-              height: 155,
+              height: 628,
               alt: 'The oxCouncil',
+              type: 'image/jpeg',
             },
           ]
         }}

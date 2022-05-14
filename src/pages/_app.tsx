@@ -20,27 +20,27 @@ type AppPropsWithLayout = AppProps & {
 }
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-
-  const { asPath, pathname } = useRouter();
-  
   const getLayout = Component.getLayout ?? ((page) => page)
-  const seoTitle = pageProps.seoTitle? pageProps.seTitle: returnPathAsSeoTitle(asPath)
+  
+  const { asPath, pathname } = useRouter();
+  const seoTitle = returnPathAsSeoTitle(asPath)
+
   return (
      <ChakraProvider theme={theme}>
       <DefaultSeo
         title={`${seoTitle}`}
         titleTemplate='%s | The oxCouncil'
         description='Seeing through the future of finance. DAO Consultancy.'
-        canonical='https://oxcouncil.com/'
+        canonical='https://oxcouncil.vercel.app/'
         openGraph={{
           type:'website',
-          url: 'https://oxcouncil.com/',
+          url: 'https://oxcouncil.vercel.app/',
           site_name: 'The oxCouncil',
           title: 'The oxCouncil',
           description: 'Seeing through the future of finance. DAO Consultancy.',
           images: [
             {
-              url: '/assets/logo-light.svg',
+              url: 'https://oxcouncil.vercel.app/assets/logo-light.svg',
               width: 1200,
               height: 155,
               alt: 'The oxCouncil',
@@ -53,9 +53,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
           cardType: 'summary_large_image',
         }}
       />
-
-
-       {getLayout(<Component {...pageProps} />)}
+      {getLayout(<Component {...pageProps} />)}
     </ChakraProvider>
   );
 }

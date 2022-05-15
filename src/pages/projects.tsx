@@ -27,7 +27,9 @@ const ProjectsPage = ({ allProjects }: Props) => {
           <Heading
             fontWeight={900}
             fontSize={{ base: '3xl', sm: '3xl', md: '4xl' }}
-            lineHeight={'110%'}>
+            lineHeight={'110%'}
+            as={'h1'}
+            >
             <Text as={'span'} color='brand.100'>
               Our&nbsp;
             </Text>

@@ -35,7 +35,7 @@ const PostCarousel = ({ posts }: Props) => {
   return (
     <>
       <Flex>
-        <Heading as={'h1'}> 
+        <Heading as={'h2'}> 
           <Text as={'span'} color={'brand.100'}>
             Latest&nbsp;
           </Text>

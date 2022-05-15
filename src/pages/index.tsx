@@ -42,7 +42,7 @@ const HomePage = ({ allPosts, allProjects }: Props) => {
       <Container width={'100%'} maxWidth={'100%'} py={70} id={'members'}>
         <Container maxW={'980px'}>
           <Stack textAlign={'center'} align={'center'}>
-            <Heading as={'h1'} fontSize={'4xl'}>
+            <Heading as={'h2'} fontSize={'4xl'}>
               <Text as={'span'} color={'brand.100'} mr={2}>
                 Join&nbsp;
               </Text>

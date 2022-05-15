@@ -34,7 +34,7 @@ let members = [
     position: "Co-founder/UX&Design",
     profile: '/assets/members/gabrielfraga.jpeg',
     bio: "Flamengo. Chelsea. @BTLVid Designer.",
-    twitter: "GabFoligno",
+    twitter: "@",
     role: 'core'
   }, 
   {

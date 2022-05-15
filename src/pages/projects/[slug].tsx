@@ -73,10 +73,10 @@ const ProjectPage = ({ project }: Props) => {
                 <Heading
                   fontWeight={900}
                   fontSize={{ base: '4xl', sm: '5xl', md: '6xl' }}
-                  as={'h1'} 
                   lineHeight={'110%'}
                   zIndex={10}
                   color={headingColor}
+                  as={'h1'}
                   >
                   { project.title }
                 </Heading>
@@ -108,7 +108,7 @@ const ProjectPage = ({ project }: Props) => {
                 zIndex={12}
                 ml={{base:'-8px', md:'0px'}}
               >
-                <Text fontFamily={'heading'} fontWeight={'300'}>{project.tagline}</Text>
+                <Text fontFamily={'heading'} fontWeight={'300'} as={'h2'}>{project.tagline}</Text>
               </Stack>
             <div className='project-content' dangerouslySetInnerHTML={{ __html: project.content }} />
           </Stack>

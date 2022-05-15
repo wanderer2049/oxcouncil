@@ -19,6 +19,7 @@ export const Hero = () => {
           fontWeight={900}
           fontSize={{ base: '4xl', sm: '5xl', md: '8xl' }}
           lineHeight={'110%'}
+          as={'h1'}
           >
           <Text as={'span'} color='brand.100'>
             ox
@@ -27,7 +28,7 @@ export const Hero = () => {
             Council
           </Text>
         </Heading>
-        <Text color={'white.500'} fontSize={{ base: '2xl', sm: '2xl', md: '4xl' }} lineHeight={'110%'} maxW={'3xl'} fontWeight={300}>
+        <Text color={'white.500'} fontSize={{ base: '2xl', sm: '2xl', md: '4xl' }} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} as={'h2'}>
           We are a volunteer-run organization seeing through the future of finance.
         </Text>
         <Stack spacing={6} direction={{base:'column', md:'row'}}>

@@ -27,14 +27,16 @@ const PostsPage = ({ allPosts }: Props) => {
           <Heading
             fontWeight={900}
             fontSize={{ base: '3xl', sm: '3xl', md: '4xl' }}
-            lineHeight={'110%'}>
+            lineHeight={'110%'}
+            as={'h1'}
+            >
             <Text as={'span'} color='brand.100'>
               Latest&nbsp;
             </Text>
             <Text as={'span'}>
               Blog
             </Text>
-            <Text color={'white.500'} fontSize={{ base: '2xl'}} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} textAlign={'center'} pt={'15px'} fontFamily={'body'}>
+            <Text color={'white.500'} fontSize={{ base: '2xl'}} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} textAlign={'center'} pt={'15px'} fontFamily={'body'} as={'h2'} >
               Get the latest news from the oxCouncil team.
             </Text>
           </Heading>

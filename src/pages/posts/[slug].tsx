@@ -82,10 +82,10 @@ const PostPage = ({ post }: Props) => {
                 <Heading
                   fontWeight={900}
                   fontSize={{ base: '4xl', sm: '5xl', md: '6xl' }}
-                  as={'h1'} 
                   lineHeight={'110%'}
                   zIndex={10}
                   color={headingColor}
+                  as={'h1'}
                   >
                     { post.title }
                 </Heading>

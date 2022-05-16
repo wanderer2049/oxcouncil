@@ -11,23 +11,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
       - name: Use Node.js 16
-      - uses: actions/setup-node@v2
+        uses: actions/setup-node@v2
         with:
           node-version: 16
-
       - name: Setup Yarn
         run: npm install -g yarn
+      - name: Install Yarn package
         run: yarn install --frozen-lockfile
+      - name: Build project
         run: yarn build
-
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-
       - name: Run Playwright tests
         run: yarn playwright test
-
       - uses: actions/upload-artifact@v2
         if: always()
         with:

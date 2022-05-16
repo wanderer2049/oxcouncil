@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-test('navigation test', async ({ page }) => {
+test('nav', async ({ page }) => {
 
   const siteName = "The oxCouncil"
   const titleSeperator = " | "

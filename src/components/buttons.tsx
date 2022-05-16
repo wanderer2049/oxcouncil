@@ -7,6 +7,7 @@ import { GiMagicHat } from 'react-icons/gi';
 interface Props {
   text: string,
   link: string,
+  class?: string,
 }
 
 export const TwitterButton = () => {
@@ -43,7 +44,7 @@ export const LinkButton = (props:Props) => {
       px={6} 
       leftIcon={<LinkIcon />}
       href='{props.link}'>
-        
+      className={props.class}
     </Button>
   );
 }
@@ -65,6 +66,7 @@ export const BrandButton = (props:Props) => {
       rightIcon={<HiArrowRight />}
       href={props.link}
       zIndex={3}
+      className={props.class}
       >
         {props.text}
     </Button>
@@ -83,6 +85,7 @@ export const AltButton = (props:Props) => {
       leftIcon={<GiMagicHat />}
       href={props.link}>
         {props.text}
+      className={props.class}
     </Button>
   );
 }

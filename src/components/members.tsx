@@ -148,11 +148,12 @@ export const MemberItem = ({ member }:Props) => {
             bottom: 0,
             right: 3,
           }}
+          className={'member-avatar'}
         />
-        <Heading fontSize={'2xl'} fontFamily={'heading'}>
+        <Heading fontSize={'2xl'} fontFamily={'heading'} className={'member-name'}>
           { member.name }
         </Heading>
-        <Text textColor={ textColor } fontSize={'sm'} fontWeight={600} color={textColor} mb={4} bg={ bgColor } borderRadius={15} p={'10px'} my={'10px'}>
+        <Text textColor={ textColor } fontSize={'sm'} fontWeight={600} color={textColor} mb={4} bg={ bgColor } borderRadius={15} p={'10px'} my={'10px'} className={'member-position'}>
          { member.position }
         </Text>
         <Text
@@ -162,6 +163,7 @@ export const MemberItem = ({ member }:Props) => {
           px={3}
           my={5}
           minHeight={'50px'}
+          className={'member-bio'}
           >
           { member.bio }
         </Text>
@@ -203,11 +205,12 @@ export const MemberCarouselItem = ({ member }:Props) => {
             bottom: 0,
             right: 3,
           }}
+          className={'member-avatar'}
         />
-        <Heading fontSize={'2xl'} fontFamily={'heading'}>
+        <Heading fontSize={'2xl'} fontFamily={'heading'} className={'member-name'}>
           { member.name }
         </Heading>
-        <Text textColor={ textColor } fontSize={'sm'} fontWeight={600} color={textColor} mb={4} bg={ bgColor } borderRadius={15} p={'10px'} my={'10px'}>
+        <Text textColor={ textColor } fontSize={'sm'} fontWeight={600} color={textColor} mb={4} bg={ bgColor } borderRadius={15} p={'10px'} my={'10px'} className={'member-position'}>
          { member.position }
         </Text>
         <Text
@@ -217,6 +220,7 @@ export const MemberCarouselItem = ({ member }:Props) => {
           px={3}
           my={5}
           minHeight={'50px'}
+          className={'member-bio'}
           >
           { member.bio }
         </Text>

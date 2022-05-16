@@ -35,6 +35,7 @@ const ProjectPreview = ({
         width={'100%'}
         backgroundImage={`${featureImage}`}
         backgroundSize={'cover'}
+        className={'project-featured-image'}
       >
         
       </Box>
@@ -49,7 +50,7 @@ const ProjectPreview = ({
           fontSize={{base: '2xl', md: '3xl'}}
           fontFamily={'heading'}
         >
-          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`/projects/${slug}`}>
+          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`/projects/${slug}`} className={'project-title'}>
             {title}
           </Link>
         </Heading>
@@ -58,10 +59,11 @@ const ProjectPreview = ({
           my={5}
           color={textColor}
           fontSize={'md'}
+          className={'project-tagline'}
         >
           {tagline}
         </Text>        
-        <BrandButton text='Learn More' link={`/projects/${slug}`} />
+        <BrandButton text='Learn More' link={`/projects/${slug}`} class={'project-button'} />
       </Box>
     </>
   );

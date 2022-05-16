@@ -44,6 +44,7 @@ const PostPreview = ({
         backgroundSize={'cover'}
         backgroundPosition={'center'}
         minHeight={'250px'}
+        className={'post-featured-image'}
         >
       </Box>
       <Box
@@ -57,7 +58,7 @@ const PostPreview = ({
           fontSize={{base: '2xl', md: '3xl'}}
           fontFamily={'heading'}
           >
-          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`/posts/${slug}`}>
+          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`/posts/${slug}`} className={'post-title'}>
             {title}
           </Link>
         </Heading>
@@ -68,11 +69,11 @@ const PostPreview = ({
           ml={{base:'-8px', md:'0px'}}
           mt={5}
         >
-          <HStack ml={{base:'8px', md:'0px'}} textColor={ textColor } fontSize={'sm'} fontWeight={600} >
+          <HStack ml={{base:'8px', md:'0px'}} textColor={ textColor } fontSize={'sm'} fontWeight={600}>
             <Avatar name={ author.name } src={ author.picture } size={'2xs'} />
-            <Text fontFamily={'heading'} fontWeight={300}>{ author.name }</Text> 
+            <Text fontFamily={'heading'} fontWeight={300}  className={'post-author'}>{ author.name }</Text> 
           </HStack>
-          <HStack textColor={ textColor } fontSize={'sm'} fontWeight={600}>
+          <HStack textColor={ textColor } fontSize={'sm'} fontWeight={600} className={'post-date'}>
             <Text fontFamily={'heading'} fontWeight={300} display={{base:'none', md:'inline-block'}}>&nbsp;-&nbsp;</Text>
             <BsCalendarWeek />
             <Text fontFamily={'heading'} fontWeight={300}><DateFormatter dateString={date} /></Text>
@@ -83,10 +84,11 @@ const PostPreview = ({
           my={5}
           color={textColor}
           fontSize={'md'}
+          className={'post-excerpt'} 
         >
           {excerpt.split(" ").splice(0,30).join(" ")}...
         </Text>        
-        <BrandButton text='Read More' link={`/posts/${slug}`} />
+        <BrandButton text='Read More' link={`/posts/${slug}`} class={'post-button'} />
       </Box>
     </>
   );

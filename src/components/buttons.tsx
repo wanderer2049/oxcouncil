@@ -43,8 +43,10 @@ export const LinkButton = (props:Props) => {
       rounded={'full'} 
       px={6} 
       leftIcon={<LinkIcon />}
-      href='{props.link}'>
+      href='{props.link}'
       className={props.class}
+      >
+        { props.text }
     </Button>
   );
 }
@@ -83,9 +85,10 @@ export const AltButton = (props:Props) => {
       width={'200px'}
       fontFamily={'heading'}
       leftIcon={<GiMagicHat />}
-      href={props.link}>
-        {props.text}
+      href={props.link}
       className={props.class}
+    >
+        {props.text}
     </Button>
   );
 }

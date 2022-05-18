@@ -1,5 +1,5 @@
 export const SITE_URL = 'https://oxcouncil.vercel.app/'
 export const SITE_NAME ='The oxCounCil'
-export const SITE_DESCRIPTION = 'Connecting the dots'
+export const SITE_DESCRIPTION = 'Connecting the dots.'
 export const SITE_OG_IMAGE = 'https://oxcouncil.vercel.app/assets/logo-og.jpg'
 export const SITE_TWITTER = '@oxcouncil'

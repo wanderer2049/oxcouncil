@@ -7,17 +7,12 @@ import {
   Stack,
   Heading,
   Text,
-  Link,
-  Image,
-  Icon,
   HStack,
   Avatar,
-  Button,
   useColorModeValue,
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator
+  BreadcrumbLink
 } from '@chakra-ui/react';
 import { BsCalendarWeek } from 'react-icons/bs';
 import { NextSeo } from 'next-seo';
@@ -28,8 +23,6 @@ import Post from '../../types/post';
 
 type Props = {
   post: Post
-  morePosts: Post[]
-  preview?: boolean
 }
 
 const PostPage = ({ post }: Props) => {
@@ -169,9 +162,9 @@ export async function getStaticProps({ params }: Params) {
     'date',
     'slug',
     'author',
-    'content',
-    'ogImage',
+    'excerpt',
     'coverImage',
+    'content'
   ])
   const content = await markdownToHtml(post.content || '')
 

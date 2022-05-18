@@ -7,7 +7,7 @@ import { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { DefaultSeo } from 'next-seo'
-import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, SITE_TWITTER, SITE_OG_IMAGE } from "../constants/settings";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, SITE_TWITTER, SITE_OG_IMAGE, SITE_NAME_SEPRATOR } from "../constants/settings";
 import { returnPathAsSeoTitle } from '../lib/seo';
 import theme from '../theme';
 import '../styles/globals.scss';
@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
      <ChakraProvider theme={theme}>
       <DefaultSeo
         title={`${seoTitle}`}
-        titleTemplate={'%s | ' + SITE_NAME}
+        titleTemplate={'%s'+ SITE_NAME_SEPRATOR + SITE_NAME}
         description={SITE_DESCRIPTION}
         canonical={SITE_URL}
         openGraph={{

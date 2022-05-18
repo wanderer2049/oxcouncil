@@ -7,6 +7,7 @@ import { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { DefaultSeo } from 'next-seo'
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, SITE_TWITTER, SITE_OG_IMAGE } from "../constants/settings";
 import { returnPathAsSeoTitle } from '../lib/seo';
 import theme from '../theme';
 import '../styles/globals.scss';
@@ -29,28 +30,28 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
      <ChakraProvider theme={theme}>
       <DefaultSeo
         title={`${seoTitle}`}
-        titleTemplate='%s | The oxCouncil'
-        description='Seeing through the future of finance. DAO Consultancy.'
-        canonical='https://oxcouncil.vercel.app/'
+        titleTemplate={'%s | ' + SITE_NAME}
+        description={SITE_DESCRIPTION}
+        canonical={SITE_URL}
         openGraph={{
           type:'website',
-          url: 'https://oxcouncil.vercel.app/',
-          site_name: 'The oxCouncil',
-          title: 'The oxCouncil',
-          description: 'Seeing through the future of finance. DAO Consultancy.',
+          url: SITE_URL,
+          site_name: SITE_NAME,
+          title: SITE_NAME,
+          description: SITE_DESCRIPTION,
           images: [
             {
-              url: 'https://oxcouncil.vercel.app/assets/logo-og.jpg',
+              url: SITE_OG_IMAGE,
               width: 1200,
               height: 628,
-              alt: 'The oxCouncil',
+              alt: SITE_DESCRIPTION,
               type: 'image/jpeg',
             },
           ]
         }}
         twitter={{
-          handle: '@oxcouncil',
-          site: '@oxcouncil',
+          handle: SITE_TWITTER,
+          site: SITE_TWITTER,
           cardType: 'summary_large_image',
         }}
       />

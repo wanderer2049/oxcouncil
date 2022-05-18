@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test'
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, SITE_TWITTER, SITE_OG_IMAGE } from "../src/constants/settings";
 
 test('members', async ({ page }) => {
 
   const membersPageUrl = '/members'
-  const membersPageTitle = 'Members | The oxCouncil'
+  const membersPageTitle = 'Members | ' + SITE_NAME
   
   await page.goto(membersPageUrl)
 

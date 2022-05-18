@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test'
 import fs from 'fs';
 import { join } from 'path';
+import { SITE_NAME  } from "../src/constants/settings";
 
 const mainDirectory = process.cwd();
 const length = fs.readdirSync(join(mainDirectory, '/projects')).length
@@ -8,7 +9,7 @@ const length = fs.readdirSync(join(mainDirectory, '/projects')).length
 test('posts', async ({ page }) => {
 
   const projectPageUrl = '/projects'
-  const projectPageTitle = 'Projects | The oxCouncil'
+  const projectPageTitle = 'Projects | ' + SITE_NAME
   
   await page.goto(projectPageUrl)
 

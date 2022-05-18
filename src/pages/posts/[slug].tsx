@@ -20,6 +20,7 @@ import {
   BreadcrumbSeparator
 } from '@chakra-ui/react';
 import { BsCalendarWeek } from 'react-icons/bs';
+import { NextSeo } from 'next-seo';
 import DateFormatter from '../../lib/dateFormatter';
 import DefaultLayout from '../../components/layout';
 import { getPostBySlug, getAllPosts, markdownToHtml } from '../../lib/posts';
@@ -42,6 +43,17 @@ const PostPage = ({ post }: Props) => {
   }
   return (
     <>
+      <NextSeo
+        title={post.title}
+        description={post.excerpt}
+        openGraph={{
+          images: [
+            {
+              url: post.coverImage,
+            }
+          ],
+        }}
+      />
       <Container 
         width={'980px'}
         maxW={'100%'}

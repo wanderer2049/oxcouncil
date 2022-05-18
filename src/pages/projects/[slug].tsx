@@ -13,6 +13,7 @@ import {
   BreadcrumbLink,
 } from '@chakra-ui/react';
 import DefaultLayout from '../../components/layout';
+import { NextSeo } from 'next-seo';
 import { getPostBySlug, getAllPosts, markdownToHtml } from '../../lib/posts';
 import Project from '../../types/project';
 
@@ -33,6 +34,17 @@ const ProjectPage = ({ project }: Props) => {
   }
   return (
     <>
+    <NextSeo
+        title={project.title}
+        description={project.tagline}
+        openGraph={{
+          images: [
+            {
+              url: project.featureImage,
+            }
+          ],
+        }}
+      />
       <Container 
         width={'980px'}
         maxW={'100%'}

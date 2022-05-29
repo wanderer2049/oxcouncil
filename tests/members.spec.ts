@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { SITE_NAME, SITE_NAME_SEPRATOR } from "../src/constants/settings";
+import { SITE_NAME, SITE_NAME_SEPRATOR } from "../src/constants/site";
 
 test('members', async ({ page }) => {
 

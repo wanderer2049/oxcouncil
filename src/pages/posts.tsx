@@ -36,10 +36,10 @@ const PostsPage = ({ allPosts }: Props) => {
             <Text as={'span'}>
               Blog
             </Text>
-            <Text color={'white.500'} fontSize={{ base: '2xl'}} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} textAlign={'center'} pt={'15px'} fontFamily={'body'} as={'h2'} >
-              Get the latest news from the oxCouncil team.
-            </Text>
           </Heading>
+          <Text color={'white.500'} fontSize={{ base: '2xl'}} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} textAlign={'center'} pt={'15px'} fontFamily={'body'} as={'h2'} mt={'0 !important'} >
+            Get the latest news from the oxCouncil team.
+          </Text>
         </Stack>
       </Container>
       <Container width={'100%'} maxWidth={'100%'} pt={10} borderRadius={30}>

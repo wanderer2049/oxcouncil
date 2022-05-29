@@ -12,6 +12,7 @@ import { BsCalendarWeek } from 'react-icons/bs';
 import DateFormatter from '../lib/dateFormatter';
 import { BrandButton } from '../components/buttons';
 import Author from '../types/author';
+import { SITE } from '../constants/site';
 
 type Props = {
   title: string
@@ -58,7 +59,7 @@ const PostPreview = ({
           fontSize={{base: '2xl', md: '3xl'}}
           fontFamily={'heading'}
           >
-          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`/posts/${slug}`} className={'post-title'}>
+          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`${SITE.BLOG.PATH}/${slug}`} className={'post-title'}>
             {title}
           </Link>
         </Heading>
@@ -88,7 +89,7 @@ const PostPreview = ({
         >
           {excerpt.split(" ").splice(0,30).join(" ")}...
         </Text>        
-        <BrandButton text='Read More' link={`/posts/${slug}`} class={'post-button'} />
+        <BrandButton text='Read More' link={`${SITE.BLOG.PATH}/${slug}`} class={'post-button'} />
       </Box>
     </>
   );

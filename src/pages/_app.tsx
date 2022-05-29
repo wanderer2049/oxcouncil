@@ -7,7 +7,7 @@ import { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { DefaultSeo } from 'next-seo'
-import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, SITE_TWITTER, SITE_OG_IMAGE, SITE_NAME_SEPRATOR } from "../constants/site";
+import { SITE } from "../constants/site";
 import { returnPathAsSeoTitle } from '../lib/seo';
 import theme from '../theme';
 import '../styles/globals.scss';
@@ -30,28 +30,28 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
      <ChakraProvider theme={theme}>
       <DefaultSeo
         title={`${seoTitle}`}
-        titleTemplate={'%s'+ SITE_NAME_SEPRATOR + SITE_NAME}
-        description={SITE_DESCRIPTION}
-        canonical={SITE_URL}
+        titleTemplate={'%s'+ SITE.SEO.NAME_SEPERATOR + SITE.NAME}
+        description={SITE.DESCRIPTION}
+        canonical={SITE.URL}
         openGraph={{
           type:'website',
-          url: SITE_URL,
-          site_name: SITE_NAME,
-          title: SITE_NAME,
-          description: SITE_DESCRIPTION,
+          url: SITE.URL,
+          site_name: SITE.NAME,
+          title: SITE.NAME,
+          description: SITE.DESCRIPTION,
           images: [
             {
-              url: SITE_OG_IMAGE,
+              url: SITE.SEO.OG_IMAGE,
               width: 1200,
               height: 628,
-              alt: SITE_DESCRIPTION,
+              alt: SITE.DESCRIPTION,
               type: 'image/jpeg',
             },
           ]
         }}
         twitter={{
-          handle: SITE_TWITTER,
-          site: SITE_TWITTER,
+          handle: SITE.SOCIALS.TWITTER,
+          site: SITE.SOCIALS.TWITTER,
           cardType: 'summary_large_image',
         }}
       />

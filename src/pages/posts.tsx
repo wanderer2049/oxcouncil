@@ -9,6 +9,7 @@ import DefaultLayout from '../components/layout';
 import PostList from '../components/postList';
 import { getAllPosts } from '../lib/posts';
 import Post from '../types/post';
+import { SITE } from '../constants/site';
 
 type Props = {
   allPosts: Post[]
@@ -62,7 +63,7 @@ PostsPage.getLayout = function getLayout(page: ReactElement) {
 export default PostsPage;
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts('posts', [
+  const allPosts = getAllPosts( SITE.BLOG.DIR_NAME, [
     'title',
     'date',
     'slug',

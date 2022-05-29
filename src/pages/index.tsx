@@ -16,6 +16,7 @@ import PostCarousel from '../components/postCarousel';
 import { getAllPosts } from '../lib/posts';
 import Post from '../types/post';
 import Project from '../types/project';
+import { SITE } from '../constants/site';
 
 type Props = {
   allPosts: Post[]
@@ -74,7 +75,7 @@ HomePage.getLayout = function getLayout(page: ReactElement) {
 export default HomePage;
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts('posts', [
+  const allPosts = getAllPosts( SITE.BLOG.DIR_NAME , [
     'title',
     'date',
     'slug',
@@ -83,7 +84,7 @@ export const getStaticProps = async () => {
     'excerpt',
   ])
 
-  const allProjects = getAllPosts('projects', [
+  const allProjects = getAllPosts( SITE.PROJECT.DIR_NAME, [
     'title',
     'tagline',
     'date',

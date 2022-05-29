@@ -9,6 +9,7 @@ import DefaultLayout from '../components/layout';
 import ProjectList from '../components/projectList';
 import { getAllPosts } from '../lib/posts';
 import Project from '../types/project';
+import { SITE } from '../constants/site';
 
 type Props = {
   allProjects: Project[]
@@ -62,7 +63,7 @@ ProjectsPage.getLayout = function getLayout(page: ReactElement) {
 export default ProjectsPage;
 
 export const getStaticProps = async () => {
-  const allProjects = getAllPosts('projects', [
+  const allProjects = getAllPosts( SITE.PROJECT.DIR_NAME, [
     'title',
     'tagline',
     'date',

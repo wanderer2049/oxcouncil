@@ -20,6 +20,7 @@ import DateFormatter from '../../lib/dateFormatter';
 import DefaultLayout from '../../components/layout';
 import { getPostBySlug, getAllPosts, markdownToHtml } from '../../lib/posts';
 import Post from '../../types/post';
+import { SITE } from '../../constants/site'
 
 type Props = {
   post: Post
@@ -99,7 +100,7 @@ const PostPage = ({ post }: Props) => {
                     <BreadcrumbLink href='/' _hover={{textDecoration: 'none'}}>Home</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbItem>
-                    <BreadcrumbLink href='/posts' _hover={{textDecoration: 'none'}} >Blog</BreadcrumbLink>
+                    <BreadcrumbLink href={SITE.BLOG.PATH} _hover={{textDecoration: 'none'}} >Blog</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbItem isCurrentPage isLastChild>
                     <BreadcrumbLink href='#' _hover={{textDecoration: 'none'}}>{post.title}</BreadcrumbLink>
@@ -157,7 +158,7 @@ type Params = {
 export default PostPage;
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug('posts', params.slug, [
+  const post = getPostBySlug( SITE.BLOG.DIR_NAME, params.slug, [
     'title',
     'date',
     'slug',
@@ -179,7 +180,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts('posts', ['slug'])
+  const posts = getAllPosts( SITE.BLOG.DIR_NAME, ['slug'])
 
   return {
     paths: posts.map((post) => {

@@ -6,6 +6,7 @@ import {
   useColorModeValue
 } from '@chakra-ui/react';
 import { BrandButton } from '../components/buttons';
+import { SITE } from '../constants/site';
 
 type Props = {
   title: string
@@ -50,7 +51,7 @@ const ProjectPreview = ({
           fontSize={{base: '2xl', md: '3xl'}}
           fontFamily={'heading'}
         >
-          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`/projects/${slug}`} className={'project-title'}>
+          <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`${SITE.PROJECT.PATH}/${slug}`} className={'project-title'}>
             {title}
           </Link>
         </Heading>
@@ -63,7 +64,7 @@ const ProjectPreview = ({
         >
           {tagline}
         </Text>        
-        <BrandButton text='Learn More' link={`/projects/${slug}`} class={'project-button'} />
+        <BrandButton text='Learn More' link={`${SITE.PROJECT.PATH}/${slug}`} class={'project-button'} />
       </Box>
     </>
   );

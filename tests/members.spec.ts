@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test'
-import { SITE_NAME, SITE_NAME_SEPRATOR } from "../src/constants/site";
+import { SITE } from "../src/constants/site";
 
-test('members', async ({ page }) => {
+test('Test: Members Page', async ({ page }) => {
 
-  const membersPageUrl = '/members'
-  const membersPageTitle = 'Members' + SITE_NAME_SEPRATOR + SITE_NAME
+  const membersPageUrl = SITE.MEMBER.PATH
+  const membersPageTitle = SITE.MEMBER.NAME + SITE.SEO.NAME_SEPERATOR + SITE.NAME
   
   await page.goto(membersPageUrl)
 

@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/icons';
 import { Logo } from './logo';
 import { Socials } from './socials';
+import { SITE } from '../constants/site'
 
 interface NavItem {
   label: string;
@@ -31,16 +32,16 @@ const Links: Array<NavItem> = [
     href: '/'
   },
   {
-    label: 'Projects',
-    href: '/projects'
+    label: SITE.PROJECT.NAME,
+    href: SITE.PROJECT.PATH
   },
   {
-    label: 'Members',
-    href: '/members'
+    label: SITE.MEMBER.NAME,
+    href: SITE.MEMBER.PATH,
   },
   {
-    label: 'Blog',
-    href: '/posts'
+    label: SITE.BLOG.NAME,
+    href: SITE.BLOG.PATH,
   },
 ];
 
@@ -85,7 +86,7 @@ export const Header = () => {
           </HStack>
           <Flex alignItems={'center'}>
             <Box display={{ base: 'none', md: 'flex' }}>
-              <Socials twitter='oxcouncil' discord='#'/>
+              <Socials twitter={SITE.SOCIALS.TWITTER} discord='#'/>
             </Box>
             <Button onClick={toggleColorMode} ml={7} rounded={'full'} width={'20px'}> 
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
@@ -128,7 +129,7 @@ export const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <Socials twitter='https://twitter.com/oxcouncil' discord='#' />
+              <Socials twitter={SITE.SOCIALS.TWITTER} discord='#' />
             </VStack>
         </Collapse>  
       </Box>

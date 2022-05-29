@@ -16,6 +16,7 @@ import DefaultLayout from '../../components/layout';
 import { NextSeo } from 'next-seo';
 import { getPostBySlug, getAllPosts, markdownToHtml } from '../../lib/posts';
 import Project from '../../types/project';
+import { SITE } from '../../constants/site'
 
 type Props = {
   project: Project
@@ -97,7 +98,7 @@ const ProjectPage = ({ project }: Props) => {
                     <BreadcrumbLink href='/' _hover={{textDecoration: 'none'}}>Home</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbItem>
-                    <BreadcrumbLink href='/projects' _hover={{textDecoration: 'none'}} >Projects</BreadcrumbLink>
+                    <BreadcrumbLink href={SITE.PROJECT.PATH} _hover={{textDecoration: 'none'}} >Projects</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbItem isCurrentPage isLastChild>
                     <BreadcrumbLink href='#' _hover={{textDecoration: 'none'}}>{project.title}</BreadcrumbLink>
@@ -147,7 +148,7 @@ type Params = {
 export default ProjectPage;
 
 export async function getStaticProps({ params }: Params) {
-  const project = getPostBySlug('projects', params.slug, [
+  const project = getPostBySlug( SITE.PROJECT.DIR_NAME, params.slug, [
     'title',
     'tagline',
     'date',
@@ -169,7 +170,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const projects = getAllPosts('projects', ['slug'])
+  const projects = getAllPosts( SITE.PROJECT.DIR_NAME , ['slug'])
 
   return {
     paths: projects.map((project) => {

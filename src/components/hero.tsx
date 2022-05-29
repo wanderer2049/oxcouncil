@@ -5,6 +5,7 @@ import {
   Text
 } from '@chakra-ui/react';
 import { BrandButton, AltButton } from '../components/buttons';
+import { SITE } from '../constants/site';
 
 export const Hero = () => {
   return (
@@ -32,8 +33,8 @@ export const Hero = () => {
           We are a volunteer-run organization seeing through the future of finance.
         </Text>
         <Stack spacing={6} direction={{base:'column', md:'row'}}>
-          <AltButton text='See Our Projects' link='/projects' />
-          <BrandButton text='Latest Blog' link='/posts' />
+          <AltButton text='See Our Projects' link={SITE.PROJECT.PATH} />
+          <BrandButton text='Latest Blog' link={SITE.BLOG.PATH} />
         </Stack>
       </Stack>
     </Container>

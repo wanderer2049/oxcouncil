@@ -16,8 +16,9 @@ import {
   Icon,
   Stack
 } from '@chakra-ui/react';
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon } from '@chakra-ui/icons';
 import Project from '../types/project';
+import { SITE } from '../constants/site';
 
 type Props = {
   projects: Project[]
@@ -88,7 +89,7 @@ const ProjectList = ({ projects }: Props) => {
                         color={'brand.100'}
                         lineHeight={'20px'}
                         _hover={{ textDecoration: 'none'}}
-                        href={`/projects/${project.slug}`}
+                        href={`${SITE.PROJECT.PATH}/${project.slug}`}
                         maxWidth={'100px'}
                       >
                         Learn More  <Icon as={ChevronRightIcon} w={4} h={4} />
@@ -114,7 +115,7 @@ const ProjectList = ({ projects }: Props) => {
                       fontSize={{base: '2xl', md: '3xl'}}
                       fontFamily={'heading'}
                     >
-                      <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`/projects/${project.slug}`}>
+                      <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`${SITE.PROJECT.PATH}/${project.slug}`}>
                         Lorem ipsum
                       </Link>
                     </Heading>

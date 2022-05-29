@@ -48,14 +48,13 @@ const MembersPage = ({ allPosts }: Props) => {
             fontSize={{ base: '2xl', sm: '2xl', md: '3xl' }}
             lineHeight={'110%'}>
               <Text as={'span'} color='brand.100'>
-                Core&nbsp;
+                Familiga&nbsp;
               </Text>
               <Text as={'span'}>
                 Members
               </Text>
             </Heading>
-            <MemberList role={'core'} />
-
+            <MemberList roles={['famiglia']} />
             <Heading
             fontWeight={900}
             fontSize={{ base: '2xl', sm: '2xl', md: '3xl' }}
@@ -63,13 +62,27 @@ const MembersPage = ({ allPosts }: Props) => {
             mt={100}  
             >
               <Text as={'span'} color='brand.100'>
-                Valued&nbsp;
+                Underboss&nbsp;
               </Text>
               <Text as={'span'}>
-                Contributors
+                Memebers
               </Text>
             </Heading>
-            <MemberList role={'contributor'} />
+            <MemberList roles={['underboss']} />
+            <Heading
+            fontWeight={900}
+            fontSize={{ base: '2xl', sm: '2xl', md: '3xl' }}
+            lineHeight={'110%'}
+            mt={100}  
+            >
+              <Text as={'span'} color='brand.100'>
+                Contributor&nbsp;
+              </Text>
+              <Text as={'span'}>
+                Memebers
+              </Text>
+            </Heading>
+            <MemberList roles={['contributor']} />
         </Container>
       </Container>
     </>

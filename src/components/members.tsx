@@ -18,8 +18,9 @@ let members = [
     position: "Founder/Managing Director",
     profile: '/assets/members/bakintoasti.jpeg',
     bio: "Lorem ipsum dolor sit amet",
-    twitter: "@core: false",
-    role: 'core'
+    twitter: "bakintoasti",
+    role: 'famiglia',
+    featured: true
   }, 
   {
     name: "Achi",
@@ -27,7 +28,8 @@ let members = [
     profile: '/assets/members/achi.jpeg',
     bio: "Lorem ipsum dolor sit amet",
     twitter: "achimo26",
-    role: 'core'
+    role: 'famiglia',
+    featured: true
   }, 
   {
     name: "Gabriel Fraga",
@@ -35,7 +37,8 @@ let members = [
     profile: '/assets/members/gabrielfraga.jpeg',
     bio: "Flamengo. Chelsea. @BTLVid Designer.",
     twitter: "@",
-    role: 'core'
+    role: 'famiglia',
+    featured: true
   }, 
   {
     name: "Baня Bолковa",
@@ -43,7 +46,8 @@ let members = [
     profile: '/assets/members/baняbолковa.jpeg',
     bio: "Lorem ipsum dolor sit amet",
     twitter: "@",
-    role: 'contributor'
+    role: 'contributor',
+    featured: false
   }, 
   {
     name: "Bo",
@@ -51,7 +55,8 @@ let members = [
     profile: '/assets/members/bo.jpeg',
     bio: "Lorem ipsum dolor sit amet",
     twitter: "@",
-    role: 'contributor'
+    role: 'underboss',
+    featured: true
   }, 
   {
     name: "Bz",
@@ -59,7 +64,8 @@ let members = [
     profile: '/assets/members/bz.jpeg',
     bio: "Lorem ipsum dolor sit amet",
     twitter: "@",
-    role: 'contributor'
+    role: 'contributor',
+    featured: false
   }, 
   {
     name: "CryptoRDog",
@@ -67,7 +73,8 @@ let members = [
     profile: '/assets/members/cryptordog.jpeg',
     bio: "Crypto-sec",
     twitter: "CryptoRDog",
-    role: 'contributor'
+    role: 'contributor',
+    featured: false
   }, 
   {
     name: "Macrodemon",
@@ -75,7 +82,8 @@ let members = [
     profile: '/assets/members/macrodemon.jpeg',
     bio: "Lorem ipsum dolor sit amet",
     twitter: "0xMacrodemon",
-    role: 'contributor'
+    role: 'underboss',
+    featured: true
   }, 
   {
     name: "MrWhite",
@@ -83,7 +91,8 @@ let members = [
     profile: '/assets/members/mrwhite.jpeg',
     bio: "Stop following me.",
     twitter: "mrwhite462",
-    role: 'core'
+    role: 'famiglia',
+    featured: true
   }, 
   {
     name: "OxJUSTICE",
@@ -91,7 +100,8 @@ let members = [
     profile: '/assets/members/oxjustice.jpeg',
     bio: "I'm the man.",
     twitter: "@",
-    role: 'core'
+    role: 'underboss',
+    featured: true
   }, 
   {
     name: "Vinicius Dutra",
@@ -99,7 +109,8 @@ let members = [
     profile: '/assets/members/viniciusdutra.jpeg',
     bio: "Lorem ipsum dolor sit amet",
     twitter: "@",
-    role: 'contributor'
+    role: 'contributor',
+    featured: false
   }, 
   {
     name: "wanderer2049",
@@ -107,7 +118,8 @@ let members = [
     profile: '/assets/members/wanderer2049.jpeg',
     bio: "Just a dev.",
     twitter: "wanderer2049",
-    role: 'core'
+    role: 'underboss',
+    featured: true
   }, 
 ];
 
@@ -116,7 +128,7 @@ type Props = {
 }
 
 type Filter = {
-  role: string,
+  roles: string[],
 }
 
 export const MemberItem = ({ member }:Props) => {
@@ -231,12 +243,12 @@ export const MemberCarouselItem = ({ member }:Props) => {
 }
 
 
-export const MemberList = ({ role }:Filter) => { 
+export const MemberList = ({ roles }:Filter) => { 
   return (
     <Box>
       <SimpleGrid columns={{base: 1, sm: 1, md: 3}} mt={10} spacingX={'40px'} spacingY={'20px'} id="our-members">
         {members.map((m, index) => {
-          if(m.role === role) {
+          if(roles.includes(m.role)) {
             return(<MemberItem member={m} key={index} />);
           }
         })}
@@ -298,14 +310,14 @@ const settings = {
   ]
 }
 
-export const MemberCarousel = ({ role }: Filter ) => {
+export const MemberCarousel = ({ roles }: Filter ) => {
   const [slider, setSlider] = React.useState<Slider | null>(null);
   const bgColor = useColorModeValue('white.100', 'gray.900');
   return (
     <>
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {members.map((m, index) => { 
-          if(m.role === role) {
+          if(roles.includes(m.role)) {
             return(<MemberCarouselItem member={m} key={index} />);
           }
         })}

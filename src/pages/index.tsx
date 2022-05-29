@@ -55,7 +55,7 @@ const HomePage = ({ allPosts, allProjects }: Props) => {
             </Heading>
           </Stack>
           <Box my={10}>
-            <MemberCarousel role={'core'} />
+            <MemberCarousel roles={['famiglia', 'underboss']} />
           </Box>
         </Container>
       </Container>

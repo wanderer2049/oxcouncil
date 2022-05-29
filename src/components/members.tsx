@@ -11,117 +11,11 @@ import { Socials } from '../components/socials';
 import Member from '../types/member';
 import React, { Component } from "react";
 import Slider from "react-slick";
+import { MEMBERS } from '../constants/members';
 
-let members = [
-  {
-    name: "Bakintoast",
-    position: "Founder/Managing Director",
-    profile: '/assets/members/bakintoasti.jpeg',
-    bio: "Lorem ipsum dolor sit amet",
-    twitter: "bakintoasti",
-    role: 'famiglia',
-    featured: true
-  }, 
-  {
-    name: "Achi",
-    position: "Co-founder/Assistant Director",
-    profile: '/assets/members/achi.jpeg',
-    bio: "Lorem ipsum dolor sit amet",
-    twitter: "achimo26",
-    role: 'famiglia',
-    featured: true
-  }, 
-  {
-    name: "Gabriel Fraga",
-    position: "Co-founder/UX&Design",
-    profile: '/assets/members/gabrielfraga.jpeg',
-    bio: "Flamengo. Chelsea. @BTLVid Designer.",
-    twitter: "@",
-    role: 'famiglia',
-    featured: true
-  }, 
-  {
-    name: "Baня Bолковa",
-    position: "Smart Contract Research",
-    profile: '/assets/members/baняbолковa.jpeg',
-    bio: "Lorem ipsum dolor sit amet",
-    twitter: "@",
-    role: 'contributor',
-    featured: false
-  }, 
-  {
-    name: "Bo",
-    position: "Eulogy Partner/Consultant",
-    profile: '/assets/members/bo.jpeg',
-    bio: "Lorem ipsum dolor sit amet",
-    twitter: "@",
-    role: 'underboss',
-    featured: true
-  }, 
-  {
-    name: "Bz",
-    position: "Content Writer",
-    profile: '/assets/members/bz.jpeg',
-    bio: "Lorem ipsum dolor sit amet",
-    twitter: "@",
-    role: 'contributor',
-    featured: false
-  }, 
-  {
-    name: "CryptoRDog",
-    position: "Content Writer",
-    profile: '/assets/members/cryptordog.jpeg',
-    bio: "Crypto-sec",
-    twitter: "CryptoRDog",
-    role: 'contributor',
-    featured: false
-  }, 
-  {
-    name: "Macrodemon",
-    position: "Smart Contract Research",
-    profile: '/assets/members/macrodemon.jpeg',
-    bio: "Lorem ipsum dolor sit amet",
-    twitter: "0xMacrodemon",
-    role: 'underboss',
-    featured: true
-  }, 
-  {
-    name: "MrWhite",
-    position: "Advisor",
-    profile: '/assets/members/mrwhite.jpeg',
-    bio: "Stop following me.",
-    twitter: "mrwhite462",
-    role: 'famiglia',
-    featured: true
-  }, 
-  {
-    name: "OxJUSTICE",
-    position: "Marketing Director",
-    profile: '/assets/members/oxjustice.jpeg',
-    bio: "I'm the man.",
-    twitter: "@",
-    role: 'underboss',
-    featured: true
-  }, 
-  {
-    name: "Vinicius Dutra",
-    position: "Technical Analyst",
-    profile: '/assets/members/viniciusdutra.jpeg',
-    bio: "Lorem ipsum dolor sit amet",
-    twitter: "@",
-    role: 'contributor',
-    featured: false
-  }, 
-  {
-    name: "wanderer2049",
-    position: "Front-end Developer",
-    profile: '/assets/members/wanderer2049.jpeg',
-    bio: "Just a dev.",
-    twitter: "wanderer2049",
-    role: 'underboss',
-    featured: true
-  }, 
-];
+let allMembers = MEMBERS.sort(function(a,b) {
+  return a.name.localeCompare(b.name);
+})
 
 type Props = {
   member:Member,
@@ -247,7 +141,7 @@ export const MemberList = ({ roles }:Filter) => {
   return (
     <Box>
       <SimpleGrid columns={{base: 1, sm: 1, md: 3}} mt={10} spacingX={'40px'} spacingY={'20px'} id="our-members">
-        {members.map((m, index) => {
+        {allMembers.map((m, index) => {
           if(roles.includes(m.role)) {
             return(<MemberItem member={m} key={index} />);
           }
@@ -316,7 +210,7 @@ export const MemberCarousel = ({ roles }: Filter ) => {
   return (
     <>
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {members.map((m, index) => { 
+        {allMembers.map((m, index) => { 
           if(roles.includes(m.role)) {
             return(<MemberCarouselItem member={m} key={index} />);
           }

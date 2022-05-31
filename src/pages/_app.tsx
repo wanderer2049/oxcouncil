@@ -32,10 +32,10 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         title={`${seoTitle}`}
         titleTemplate={'%s'+ SITE.SEO.NAME_SEPERATOR + SITE.NAME}
         description={SITE.DESCRIPTION}
-        canonical={SITE.URL}
+        canonical={SITE.DOMAIN}
         openGraph={{
           type:'website',
-          url: SITE.URL,
+          url: SITE.DOMAIN,
           site_name: SITE.NAME,
           title: SITE.NAME,
           description: SITE.DESCRIPTION,

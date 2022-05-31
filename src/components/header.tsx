@@ -36,13 +36,13 @@ const Links: Array<NavItem> = [
     href: SITE.PROJECT.PATH
   },
   {
-    label: SITE.MEMBER.NAME,
-    href: SITE.MEMBER.PATH,
-  },
-  {
     label: SITE.BLOG.NAME,
     href: SITE.BLOG.PATH,
   },
+  {
+    label: SITE.MEMBER.NAME,
+    href: SITE.MEMBER.PATH,
+  }
 ];
 
 export const Header = () => {

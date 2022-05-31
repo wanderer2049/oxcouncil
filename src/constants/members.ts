@@ -2,7 +2,7 @@ export const MEMBERS = [
     {
       name: "Achi",
       position: "Co-founder/Assistant Director",
-      profile: '/assets/members/achi.jpeg',
+      profile: 'achi.jpeg',
       bio: "Lorem ipsum dolor sit amet",
       twitter: "achimo26",
       role: 'famiglia',
@@ -11,7 +11,7 @@ export const MEMBERS = [
     {
       name: "Bakintoast",
       position: "Founder/Managing Director",
-      profile: '/assets/members/bakintoasti.jpeg',
+      profile: 'bakintoasti.jpeg',
       bio: "Lorem ipsum dolor sit amet",
       twitter: "bakintoasti",
       role: 'famiglia',
@@ -20,7 +20,7 @@ export const MEMBERS = [
     {
       name: "Gabriel Fraga",
       position: "Co-founder/UX&Design",
-      profile: '/assets/members/gabrielfraga.jpeg',
+      profile: 'gabrielfraga.jpeg',
       bio: "Flamengo. Chelsea. @BTLVid Designer.",
       twitter: "@",
       role: 'famiglia',
@@ -29,7 +29,7 @@ export const MEMBERS = [
     {
       name: "Baня Bолковa",
       position: "Smart Contract Research",
-      profile: '/assets/members/baняbолковa.jpeg',
+      profile: 'baняbолковa.jpeg',
       bio: "Lorem ipsum dolor sit amet",
       twitter: "@",
       role: 'contributor',
@@ -38,7 +38,7 @@ export const MEMBERS = [
     {
       name: "Bo",
       position: "Eulogy Partner/Consultant",
-      profile: '/assets/members/bo.jpeg',
+      profile: 'bo.jpeg',
       bio: "Lorem ipsum dolor sit amet",
       twitter: "@",
       role: 'underboss',
@@ -47,7 +47,7 @@ export const MEMBERS = [
     {
       name: "Bz",
       position: "Content Writer",
-      profile: '/assets/members/bz.jpeg',
+      profile: 'bz.jpeg',
       bio: "Lorem ipsum dolor sit amet",
       twitter: "@",
       role: 'contributor',
@@ -56,7 +56,7 @@ export const MEMBERS = [
     {
       name: "CryptoRDog",
       position: "Content Writer",
-      profile: '/assets/members/cryptordog.jpeg',
+      profile: 'cryptordog.jpeg',
       bio: "Crypto-sec",
       twitter: "CryptoRDog",
       role: 'contributor',
@@ -65,7 +65,7 @@ export const MEMBERS = [
     {
       name: "Macrodemon",
       position: "Smart Contract Research",
-      profile: '/assets/members/macrodemon.jpeg',
+      profile: 'macrodemon.jpeg',
       bio: "Lorem ipsum dolor sit amet",
       twitter: "0xMacrodemon",
       role: 'underboss',
@@ -74,7 +74,7 @@ export const MEMBERS = [
     {
       name: "MrWhite",
       position: "Advisor",
-      profile: '/assets/members/mrwhite.jpeg',
+      profile: 'mrwhite.jpeg',
       bio: "Stop following me.",
       twitter: "mrwhite462",
       role: 'famiglia',
@@ -83,7 +83,7 @@ export const MEMBERS = [
     {
       name: "OxJUSTICE",
       position: "Marketing Director",
-      profile: '/assets/members/oxjustice.jpeg',
+      profile: 'oxjustice.jpeg',
       bio: "I'm the man.",
       twitter: "@",
       role: 'underboss',
@@ -92,7 +92,7 @@ export const MEMBERS = [
     {
       name: "Vinicius Dutra",
       position: "Technical Analyst",
-      profile: '/assets/members/viniciusdutra.jpeg',
+      profile: 'viniciusdutra.jpeg',
       bio: "Lorem ipsum dolor sit amet",
       twitter: "@",
       role: 'contributor',
@@ -101,7 +101,7 @@ export const MEMBERS = [
     {
       name: "wanderer2049",
       position: "Front-end Developer",
-      profile: '/assets/members/wanderer2049.jpeg',
+      profile: 'wanderer2049.jpeg',
       bio: "Just a dev.",
       twitter: "wanderer2049",
       role: 'underboss',

@@ -1,10 +1,17 @@
+
 export const SITE = {
-    URL: 'https://oxcouncil.vercel.app/',
+    DOMAIN: 'https://oxcouncil.vercel.app/',
     NAME: 'The oxCouncil',
     DESCRIPTION: 'Connecting the dots.',
+    COPYRIGHT: 'The OxCouncil. All rights reserved.',
+    CREDITS: 'Built with ❤️ by wanderer2049. Logo design by Gabriel Fraga.',
+    LOGO: {
+        LIGHT: '/assets/logo-light.svg',
+        DARK: '/assets/logo.svg',
+    },
     SEO: {
-        OG_IMAGE: 'https://oxcouncil.vercel.app/assets/logo-og.jpg',
-        NAME_SEPERATOR: ' | '
+        NAME_SEPERATOR: ' | ',
+        OG_IMAGE: 'https://oxcouncil.vercel.app/assets/logo-og.jpg'
     },
     SOCIALS: {
         TWITTER: '@oxcouncil',
@@ -12,8 +19,8 @@ export const SITE = {
     },
     BLOG: {
         NAME: 'Posts',
-        PATH: '/posts',
-        DIR_NAME: '/posts',
+        PATH: '/posts',                                        
+        DIR_NAME: '/posts'
     },
     PROJECT: {
         NAME: 'Projects',
@@ -23,5 +30,6 @@ export const SITE = {
     MEMBER: {
         NAME: 'Members',
         PATH: '/members',
-    }
+        IMG_DIR_NAME: '/assets/members/'
+    },
 }

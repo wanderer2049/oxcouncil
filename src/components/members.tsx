@@ -12,6 +12,7 @@ import Member from '../types/member';
 import React, { Component } from "react";
 import Slider from "react-slick";
 import { MEMBERS } from '../constants/members';
+import { SITE } from '../constants/site';
 
 let allMembers = MEMBERS.sort(function(a,b) {
   return a.name.localeCompare(b.name);
@@ -40,7 +41,7 @@ export const MemberItem = ({ member }:Props) => {
         textAlign={'center'}>
         <Avatar
           size={'xl'}
-          src={ member.profile }
+          src={ SITE.MEMBER.IMG_DIR_NAME + '/' + member.profile }
           mb={4}
           pos={'relative'}
           _after={{
@@ -97,7 +98,7 @@ export const MemberCarouselItem = ({ member }:Props) => {
         textAlign={'center'}>
         <Avatar
           size={'xl'}
-          src={ member.profile }
+          src={ SITE.MEMBER.IMG_DIR_NAME + '/' + member.profile }
           mb={4}
           pos={'relative'}
           _after={{

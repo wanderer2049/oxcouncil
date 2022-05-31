@@ -6,6 +6,7 @@ import {
 } from '@chakra-ui/react';
 import { Logo } from './logo';
 import { Socials } from './socials';
+import { SITE } from '../constants/site'
 
 export const Footer = () => {
   return (
@@ -30,13 +31,13 @@ export const Footer = () => {
           <Logo boxSize={'250px'} />
         </Flex>
         <Box mt={4}>
-          <Socials twitter='oxcouncil' discord='#'/>
+          <Socials twitter={SITE.SOCIALS.TWITTER} discord='#'/>
         </Box>
         <Text pt={6} fontSize={'md'} textAlign={'center'} textColor={useColorModeValue('gray.700', 'gray.500')}>
-          &copy; The OxCouncil. All rights reserved.<br/>
+          &copy; {SITE.COPYRIGHT}<br/>
         </Text>
         <Text fontSize={'sm'} textAlign={'center'} textColor={useColorModeValue('gray.500', 'gray.600')}>
-          Built with ❤️ by wanderer2049. Logo design by Gabriel Fraga.
+          {SITE.CREDITS}
         </Text>
       </Box>
     </Box>

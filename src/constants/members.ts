@@ -1,4 +1,7 @@
-export const MEMBERS = [ 
+export const CONTENT = {
+  HEADING: "Join Our Vibrant Community",
+  TAGLINE:"See our contributions on other projects.",
+  MEMBERS: [ 
     {
       name: "Achi",
       position: "Co-founder/Assistant Director",
@@ -107,4 +110,5 @@ export const MEMBERS = [
       role: 'underboss',
       featured: true
     }, 
-  ];
+  ]
+}

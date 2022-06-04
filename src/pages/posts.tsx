@@ -10,6 +10,8 @@ import PostList from '../components/postList';
 import { getAllPosts } from '../lib/posts';
 import Post from '../types/post';
 import { SITE } from '../constants/site';
+import { CONTENT } from '../constants/posts';
+import { StandardHeading } from '../components/headings';
 
 type Props = {
   allPosts: Post[]
@@ -18,32 +20,8 @@ type Props = {
 const PostsPage = ({ allPosts }: Props) => {  
   return (
     <>
-      <Container maxW={'5xl'}>
-        <Stack
-          textAlign={'center'}
-          align={'center'}
-          spacing={{ base: 8, md: 10 }}
-          pt={{ base: '50px', md: '90px' }}
-          >
-          <Heading
-            fontWeight={900}
-            fontSize={{ base: '3xl', sm: '3xl', md: '4xl' }}
-            lineHeight={'110%'}
-            as={'h1'}
-            >
-            <Text as={'span'} color='brand.100'>
-              Latest&nbsp;
-            </Text>
-            <Text as={'span'}>
-              Blog
-            </Text>
-          </Heading>
-          <Text color={'white.500'} fontSize={{ base: '2xl'}} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} textAlign={'center'} pt={'15px'} fontFamily={'body'} as={'h2'} mt={'0 !important'} >
-            Get the latest news from the oxCouncil team.
-          </Text>
-        </Stack>
-      </Container>
-      <Container width={'100%'} maxWidth={'100%'} pt={10} borderRadius={30}>
+      <StandardHeading heading={CONTENT.HEADING} tagline={CONTENT.TAGLINE}></StandardHeading>
+      <Container width={'100%'} maxWidth={'100%'} borderRadius={30}>
         <Container maxW={'980px'} px={{base:'3', md:'5'}}>
           <PostList posts={allPosts} />
         </Container>

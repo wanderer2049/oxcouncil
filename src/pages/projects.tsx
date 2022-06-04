@@ -44,6 +44,7 @@ export const getStaticProps = async () => {
   const allProjects = getAllPosts( SITE.PROJECT.DIR_NAME, [
     'title',
     'tagline',
+    'excerpt',
     'date',
     'slug',
     'logo',

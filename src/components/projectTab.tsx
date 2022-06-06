@@ -24,7 +24,7 @@ type Props = {
   projects: Project[]
 }
 
-const ProjectList = ({ projects }: Props) => {
+const ProjectTab = ({ projects }: Props) => {
   const tabHoverTextColor = useColorModeValue('blackAlpha.900', 'white');
   const tabSelectedBgColor = useColorModeValue('whiteAlpha.500', 'whiteAlpha.200');
   const tabHoverBgColor = useColorModeValue('whiteAlpha.500', 'whiteAlpha.100');
@@ -116,11 +116,11 @@ const ProjectList = ({ projects }: Props) => {
                       fontFamily={'heading'}
                     >
                       <Link textDecoration={'none'} _hover={{ textDecoration: 'none' }} pb={'5'} href={`${SITE.PROJECT.PATH}/${project.slug}`}>
-                        Lorem ipsum
+                        { project.title }
                       </Link>
                     </Heading>
                     <Text color={'white.500'} fontSize={{ base: 'md'}} lineHeight={'150%'} maxW={'3xl'} fontWeight={300} fontFamily={'body'}>
-                      { project.content.split(" ").splice(0,30).join(" ") } ...
+                      { project.excerpt }
                     </Text>
                   </Container>
                 </TabPanel>
@@ -133,4 +133,4 @@ const ProjectList = ({ projects }: Props) => {
   );
 }
 
-export default ProjectList;
+export default ProjectTab;

@@ -8,6 +8,8 @@ import {
 import DefaultLayout from '../components/layout';
 import Post from '../types/post';
 import { MemberList } from '../components/members';
+import { CONTENT } from '../constants/members';
+import { StandardHeading } from '../components/headings';
 
 type Props = {
   allPosts: Post[]
@@ -16,31 +18,7 @@ type Props = {
 const MembersPage = ({ allPosts }: Props) => {  
   return (
     <>
-      <Container maxW={'5xl'}>
-        <Stack
-          textAlign={'center'}
-          align={'center'}
-          spacing={{ base: 8, md: 10 }}
-          py={{ base: '50px', md: '90px' }}
-          >
-          <Heading
-            fontWeight={900}
-            fontSize={{ base: '3xl', sm: '3xl', md: '4xl' }}
-            lineHeight={'110%'}
-            as={'h1'}
-            >
-            <Text as={'span'} color='brand.100'>
-              Join&nbsp;
-            </Text>
-            <Text as={'span'}>
-              Our Vibrant Community
-            </Text>
-            <Text color={'white.500'} fontSize={{ base: '2xl'}} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} textAlign={'center'} pt={'15px'} fontFamily={'body'} as={'h2'} >
-              Come and join us today, what say you?
-            </Text>
-          </Heading>
-        </Stack>
-      </Container>
+      <StandardHeading heading={CONTENT.HEADING} tagline={CONTENT.TAGLINE}></StandardHeading>
       <Container width={'100%'} maxWidth={'100%'} borderRadius={30} mb={50}> 
         <Container maxW={'980px'} px={{base:'3', md:'5'}} textAlign={'center'} >
             <Heading

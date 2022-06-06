@@ -13,10 +13,13 @@ import { Hero } from '../components/hero';
 import { MemberCarousel } from '../components/members';
 import ProjectTab from '../components/projectTab';
 import PostCarousel from '../components/postCarousel';
+import { StandardHeading } from '../components/headings';
 import { getAllPosts } from '../lib/posts';
 import Post from '../types/post';
 import Project from '../types/project';
 import { SITE } from '../constants/site';
+import { CONTENT as PROJECT_CONTENT } from '../constants/projects';
+import { CONTENT as MEMBER_CONTENT } from '../constants/members';
 
 type Props = {
   allPosts: Post[]
@@ -42,19 +45,7 @@ const HomePage = ({ allPosts, allProjects }: Props) => {
       </Container>
       <Container width={'100%'} maxWidth={'100%'} py={70} id={'members'}>
         <Container maxW={'980px'}>
-          <Stack textAlign={'center'} align={'center'}>
-            <Heading as={'h2'} fontSize={'4xl'}>
-              <Text as={'span'} color={'brand.100'} mr={2}>
-                Join&nbsp;
-              </Text>
-              <Text as={'span'}>
-                Our Vibrant Community
-              </Text>
-              <Text color={'white.500'} fontSize={{ base: '2xl'}} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} textAlign={'center'} pt={'15px'} fontFamily={'body'}>
-                Come and join us today, what say you?
-              </Text>
-            </Heading>
-          </Stack>
+          <StandardHeading heading={MEMBER_CONTENT.HEADING} tagline={MEMBER_CONTENT.TAGLINE} marginDisabled={true} ></StandardHeading>
           <Box my={10}>
             <MemberCarousel roles={['famiglia', 'underboss']} />
           </Box>
@@ -87,6 +78,7 @@ export const getStaticProps = async () => {
   const allProjects = getAllPosts( SITE.PROJECT.DIR_NAME, [
     'title',
     'tagline',
+    'excerpt',
     'date',
     'slug',
     'logo',

@@ -11,10 +11,10 @@ import { Socials } from '../components/socials';
 import Member from '../types/member';
 import React, { Component } from "react";
 import Slider from "react-slick";
-import { MEMBERS } from '../constants/members';
+import { CONTENT } from '../constants/members';
 import { SITE } from '../constants/site';
 
-let allMembers = MEMBERS.sort(function(a,b) {
+let allMembers = CONTENT.MEMBERS.sort(function(a,b) {
   return a.name.localeCompare(b.name);
 })
 

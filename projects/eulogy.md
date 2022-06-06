@@ -1,6 +1,7 @@
 ---
 title: 'Eulogy'
 tagline: 'A Cross-Protocol Fantom Alliance.'
+excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
 logo: '/assets/projects/eulogy.png'
 featureImage: '/assets/projects/eulogy-bg.jpeg'
 date: '2020-05-01T05:35:07.322Z'

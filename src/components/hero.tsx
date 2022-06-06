@@ -30,7 +30,7 @@ export const Hero = () => {
           </Text>
         </Heading>
         <Text color={'white.500'} fontSize={{ base: '2xl', sm: '2xl', md: '4xl' }} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} as={'h2'}>
-          We are a volunteer-run organization seeing through the future of finance.
+          Connecting the dots between capital and technology.
         </Text>
         <Stack spacing={6} direction={{base:'column', md:'row'}}>
           <AltButton text='See Our Projects' link={SITE.PROJECT.PATH} />

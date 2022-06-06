@@ -8,6 +8,8 @@ featureImage: "/assets/projects/oxdao_horse.jpg"
 date: '2021-03-10T05:35:07.322Z'
 ---
 
+## Background
+
 0xDAO describes itself as a [liquidity provider hub](https://medium.com/@0xdao/0xdao-a-liquidity-hub-for-solidly-made-with-love-by-fantom-builders-265b86130ec1) for Solidly on the Fantom network.
 
 ## Involvement

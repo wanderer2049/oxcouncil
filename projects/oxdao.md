@@ -1,16 +1,21 @@
 ---
-title: '0xDAO'
-tagline: 'Governance aggregation for bolstering rewards'
-excerpt: '0xDAO is a liquidity provider hub for Solidly. The oxCouncil is currently
-assisting 0xDAO with governance aggregation and messaging to support the platform goals.'
-logo: '/assets/projects/oxdao.png'
-featureImage: '/assets/projects/oxdao_horse.jpg'
+title: "0xDAO"
+tagline: "Helping get the message out and bolstering rewards."
+excerpt: "0xDAO is a liquidity provider hub for Solidly. The oxCouncil is currently
+assisting 0xDAO with governance aggregation and messaging to support the platform's goals."
+logo: "/assets/projects/oxdao.png"
+featureImage: "/assets/projects/oxdao_horse.jpg"
 date: '2021-03-10T05:35:07.322Z'
 ---
 
 0xDAO describes itself as a [liquidity provider hub](https://medium.com/@0xdao/0xdao-a-liquidity-hub-for-solidly-made-with-love-by-fantom-builders-265b86130ec1) for Solidly on the Fantom network.
 
 ## Involvement
+
+The oxCouncil was originally founded to assist 0xDAO token holders with aggregating vlOXD votes.
+We continue to provide action-oriented messaging for the 0xDAO team to reach retail institutional
+token holders.
+
 
 ### OXD PO6
 

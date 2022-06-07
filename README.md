@@ -25,3 +25,4 @@ This will start up the Next.js development server and your site will be availabl
 ## Contributors
 - [wanderer2049](https://github.com/wanderer2049)
 - [macrodemon](https://github.com/macrodemon)
+- [oxcouncil](https://github.com/oxcouncil)

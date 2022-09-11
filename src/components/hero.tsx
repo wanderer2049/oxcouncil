@@ -33,10 +33,8 @@ export const Hero = () => {
           Connecting the dots between capital and technology.
         </Text>
         <Stack spacing={6} direction={{base:'column', md:'row'}}>
-          {/* <AltButton text='See Our Projects' link={SITE.PROJECT.PATH} />
-          <BrandButton text='Latest Blog' link={SITE.BLOG.PATH} /> */}
-
-          <BrandButton text='See Our Projects' link={SITE.PROJECT.PATH} />
+          <BrandButton text='Our Projects' link={SITE.PROJECT.PATH} />
+          <AltButton text='Our Members' link={SITE.MEMBER.PATH} />
         </Stack>
       </Stack>
     </Container>

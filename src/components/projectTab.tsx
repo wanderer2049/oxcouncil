@@ -19,6 +19,7 @@ import {
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import Project from '../types/project';
 import { SITE } from '../constants/site';
+import { BrandButton, AltButton } from '../components/buttons';
 
 type Props = {
   projects: Project[]
@@ -37,7 +38,7 @@ const ProjectTab = ({ projects }: Props) => {
       >
         <Box>
           <Tabs orientation={'vertical'} isLazy defaultIndex={0} display={{'base':'block', 'md':'flex'}}>
-            <TabList width={{'base':'100%', 'md':'70%'}} border={'none'} mr={{'base':0, 'md':10}} mb={{'base':5, 'md':10}}>
+            <TabList width={{'base':'100%', 'md':'70%'}} border={'none'} mr={{'base':0, 'md':10}}>
               <Box mb={10}>
                 <Heading
                   fontWeight={900}
@@ -71,7 +72,8 @@ const ProjectTab = ({ projects }: Props) => {
                   _hover={{ color: tabHoverTextColor, bg: tabHoverBgColor }} 
                   _selected={{ color: tabHoverTextColor, bg: tabSelectedBgColor, borderColor: 'whiteAlpha.300' }}
                   key={index}
-                  display={{'base':'inline-block', 'md':'block'}}
+                  display={{'base':'none', 'md':'block'}}
+                  width={'100%'}
                 >
                   <HStack height={'100px'}>
                     <Avatar name='Test' src={ project.logo } mr='5' /> 
@@ -127,6 +129,9 @@ const ProjectTab = ({ projects }: Props) => {
               ))}
             </TabPanels>
           </Tabs>
+          <Stack mt={'50px'} display={{'base':'block', 'md':'none'}}>
+            <BrandButton text='See More Projects' link={SITE.PROJECT.PATH} />
+          </Stack>
         </Box>
       </Box>
     </>

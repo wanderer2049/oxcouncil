@@ -33,7 +33,7 @@ const HomePage = ({ allPosts, allProjects }: Props) => {
   return (
     <>
       <Hero />
-      <Container width={'100%'} maxWidth={'100%'} py={100} bgColor={useColorModeValue('blackAlpha.300','blackAlpha.300')}>
+      <Container width={'100%'} maxWidth={'100%'} py={70} bgColor={useColorModeValue('blackAlpha.300','blackAlpha.300')}>
         <Container maxW={'980px'}>
           <ProjectTab projects={projects} />
         </Container>

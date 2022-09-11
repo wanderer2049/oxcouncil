@@ -38,11 +38,11 @@ const HomePage = ({ allPosts, allProjects }: Props) => {
           <ProjectTab projects={projects} />
         </Container>
       </Container>
-      <Container bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')} width={'100%'} maxWidth={'100%'} py={70} pt={100}>
+      {/* <Container bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')} width={'100%'} maxWidth={'100%'} py={70} pt={100}>
         <Container maxW={'980px'}>
           <PostCarousel posts={posts} />
         </Container>
-      </Container>
+      </Container> */}
       <Container width={'100%'} maxWidth={'100%'} py={70} id={'members'}>
         <Container maxW={'980px'}>
           <StandardHeading heading={MEMBER_CONTENT.HEADING} tagline={MEMBER_CONTENT.TAGLINE} marginDisabled={true} ></StandardHeading>

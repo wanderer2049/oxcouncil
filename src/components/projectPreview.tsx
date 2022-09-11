@@ -59,7 +59,7 @@ const ProjectPreview = ({
           as={'p'}
           my={5}
           color={textColor}
-          fontSize={'md'}
+          fontSize={'20'}
           className={'project-tagline'}
         >
           {tagline}

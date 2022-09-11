@@ -35,10 +35,10 @@ const Links: Array<NavItem> = [
     label: SITE.PROJECT.NAME,
     href: SITE.PROJECT.PATH
   },
-  {
-    label: SITE.BLOG.NAME,
-    href: SITE.BLOG.PATH,
-  },
+  // {
+  //   label: SITE.BLOG.NAME,
+  //   href: SITE.BLOG.PATH,
+  // },
   {
     label: SITE.MEMBER.NAME,
     href: SITE.MEMBER.PATH,

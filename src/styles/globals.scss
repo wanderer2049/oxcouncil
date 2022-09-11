@@ -1,3 +1,8 @@
+$sm: '30em';
+$md: '48em';
+$lg: '62em';
+$xl: '80em';
+
 html,
 body {
   padding: 0;
@@ -26,10 +31,18 @@ a {
 
   h2 {
     font-size: var(--chakra-fontSizes-5xl);
+
+    @media screen and (max-width: $md) {
+      font-size: var(--chakra-fontSizes-2xl);
+    }
   }
 
   h3 {
     font-size: var(--chakra-fontSizes-4xl);
+
+    @media screen and (max-width: $md) {
+      font-size: var(--chakra-fontSizes-xl);
+    }
   }
 
   h4 {

@@ -1,6 +1,6 @@
 export const CONTENT = {
-  HEADING: "Join Our Vibrant Community",
-  TAGLINE:"See our contributions on other projects.",
+  HEADING: "Our Members",
+  TAGLINE:"Come and join our vibrant community.",
   MEMBERS: [ 
     {
       name: "Achi",

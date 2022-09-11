@@ -69,10 +69,10 @@ export const MemberItem = ({ member }:Props) => {
           color={useColorModeValue('gray.700', 'gray.400')}
           px={3}
           my={5}
-          minHeight={'50px'}
+          minHeight={'3px'}
           className={'member-bio'}
           >
-          { member.bio }
+          {/* { member.bio } */}
         </Text>
         { member.twitter? <Socials twitter={ member.twitter } /> : <Socials /> }
       </Box>
@@ -126,10 +126,10 @@ export const MemberCarouselItem = ({ member }:Props) => {
           color={useColorModeValue('gray.700', 'gray.400')}
           px={3}
           my={5}
-          minHeight={'50px'}
+          minHeight={'3px'}
           className={'member-bio'}
           >
-          { member.bio }
+          {/* { member.bio } */}
         </Text>
         { member.twitter? <Socials twitter={ member.twitter } /> : <Socials /> }
       </Box>

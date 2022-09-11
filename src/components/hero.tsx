@@ -29,10 +29,10 @@ export const Hero = () => {
             Council
           </Text>
         </Heading>
-        <Text color={'white.500'} fontSize={{ base: '2xl', sm: '2xl', md: '4xl' }} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} as={'h2'}>
+        <Text color={'white.500'} fontSize={{ base: '2xl', sm: '2xl', md: '5xl' }} lineHeight={'110%'} maxW={'3xl'} fontWeight={300} as={'h2'}>
           Connecting the dots between capital and technology.
         </Text>
-        <Stack spacing={6} direction={{base:'column', md:'row'}}>
+        <Stack spacing={6} direction={{base:'column', md:'row'}} pt='30px'>
           <BrandButton text='Our Projects' link={SITE.PROJECT.PATH} />
           <AltButton text='Our Members' link={SITE.MEMBER.PATH} />
         </Stack>
